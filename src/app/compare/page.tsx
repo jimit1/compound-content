@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import Hero from "@/components/Hero";
+import ArticleCard from "@/components/ArticleCard";
 import vendorsData from "@/data/vendors.json";
 
 const SITE = "https://learn.abmatic.ai";
@@ -34,13 +34,11 @@ function parsePair(slug: string): { a: string; b: string } | null {
   return { a: m[1], b: m[2] };
 }
 
-const livePairs = data.pair_filter.pairs;
-
-const plannedPairs = [
-  "abmatic-vs-hubspot",
-  "abmatic-vs-marketo",
-  "demandbase-vs-terminus",
-  "6sense-vs-bombora",
+const COMPARE_IMAGES = [
+  "/images/hero/compare.jpg",
+  "/images/hero/best-abm.jpg",
+  "/images/hero/alternatives.jpg",
+  "/images/hero/agentic.jpg",
 ];
 
 const JSONLD = {
@@ -64,77 +62,58 @@ const JSONLD = {
 };
 
 export default function CompareIndex() {
+  const livePairs = data.pair_filter.pairs;
+  const cards = livePairs
+    .map((slug, i) => {
+      const parsed = parsePair(slug);
+      if (!parsed) return null;
+      const a = nameOf(parsed.a);
+      const b = nameOf(parsed.b);
+      return {
+        href: `/compare/${slug}/`,
+        title: `${a} vs ${b}`,
+        summary: `Pricing, time-to-value, standout features, and module coverage for ${a} and ${b} in 2026.`,
+        category: "Compare",
+        image: COMPARE_IMAGES[i % COMPARE_IMAGES.length],
+        author: "Abmatic AI editorial",
+        publishedAt: "2026-04-22",
+        readMinutes: 9,
+      };
+    })
+    .filter(Boolean) as Array<React.ComponentProps<typeof ArticleCard>>;
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(JSONLD) }}
       />
-      <Breadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Compare" },
-        ]}
-      />
-      <h1>Compare</h1>
-      <p className="lede">
-        Head-to-head comparisons for the platforms actually making B2B
-        marketers' 2026 shortlists. Each page pulls pricing bands, time-to-value,
-        standout features, and module coverage from public product
-        documentation, G2, and customer-reported figures. Where Abmatic AI is on
-        the page, we disclose the bias up-front and show our work.
-      </p>
+      <section className="category-hero">
+        <div className="category-hero__inner">
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Compare" }]} />
+          <h1 className="category-hero__h1">Compare</h1>
+          <p className="category-hero__lede">
+            Head-to-head comparisons for the platforms making B2B marketers'
+            2026 shortlists. Each page pulls pricing bands, time-to-value,
+            standout features, and module coverage from public product
+            documentation, G2, and customer-reported figures. Where Abmatic AI
+            is on the page, we disclose the bias up-front.
+          </p>
+        </div>
+      </section>
 
-      <Hero
-        src="/images/hero/compare.jpg"
-        alt="Two overlapping data visualizations on a dark background, suggesting a side-by-side comparison"
-        credit={{ name: "William Iven", url: "https://unsplash.com/@firmbee" }}
-      />
+      <div className="page-wide">
+        <div className="rail__grid">
+          {cards.map((c, i) => (
+            <ArticleCard key={c.href} {...c} priority={i < 3} />
+          ))}
+        </div>
 
-      <h2>Live comparisons</h2>
-      <div className="cat-cards">
-        {livePairs.map((slug) => {
-          const parsed = parsePair(slug);
-          if (!parsed) return null;
-          const a = nameOf(parsed.a);
-          const b = nameOf(parsed.b);
-          return (
-            <a key={slug} className="cat-card" href={`/compare/${slug}/`}>
-              <span className="tag">Comparison</span>
-              <h3>{a} vs {b}</h3>
-              <p>
-                Pricing, time-to-value, standout features, and module coverage
-                for {a} and {b} in 2026.
-              </p>
-            </a>
-          );
-        })}
-      </div>
-
-      <h2>Coming soon</h2>
-      <div className="cat-cards">
-        {plannedPairs.map((slug) => {
-          const parsed = parsePair(slug);
-          if (!parsed) return null;
-          const a = parsed.a.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
-          const b = parsed.b.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
-          return (
-            <div key={slug} className="cat-card planned" aria-disabled="true">
-              <span className="tag">Comparison</span>
-              <span className="planned-badge">Planned</span>
-              <h3>{a} vs {b}</h3>
-              <p>Shortlisting both? This comparison is on the publish queue.</p>
-            </div>
-          );
-        })}
-      </div>
-
-      <p>
-        <small>
+        <p className="category-footnote">
           Looking for a broader roundup instead of a 1:1? See our{" "}
           <a href="/alternatives-to/">alternatives guides</a>.
-        </small>
-      </p>
+        </p>
+      </div>
     </>
   );
 }

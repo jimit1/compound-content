@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import Image from "next/image";
+import SearchBar from "@/components/SearchBar";
+import NewsletterCapture from "@/components/NewsletterCapture";
+import { entries } from "@/lib/entries";
 import "./globals.css";
 
 const SITE = "https://learn.abmatic.ai";
@@ -40,7 +43,23 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
+const NAV_LINKS = [
+  { href: "/alternatives-to/", label: "Alternatives" },
+  { href: "/compare/", label: "Compare" },
+  { href: "/glossary/", label: "Glossary" },
+  { href: "/learn/", label: "Learn" },
+];
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const searchIndex = entries.map((e) => ({
+    href: e.href,
+    title: e.title,
+    summary: e.summary,
+    tag: e.category ?? e.tag,
+    keywords: e.keywords,
+  }));
+  const year = new Date().getFullYear();
+
   return (
     <html lang="en">
       <body>
@@ -49,9 +68,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           src="https://clients.abmatic.ai/AkX9vu5KLybU.js"
           strategy="afterInteractive"
         />
+
         <header className="site-header">
-          <nav>
-            <a href={PRIMARY} className="brand" aria-label="Abmatic AI home">
+          <div className="site-header__inner">
+            <a href="/" className="site-header__brand" aria-label="Abmatic AI Learn home">
               <Image
                 src="/brand/logo-horizontal.png"
                 alt="Abmatic AI"
@@ -60,26 +80,58 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 priority
               />
             </a>
-            <div className="nav-right">
-              <a href="/" className="nav-link">Learn</a>
-              <a href={`${PRIMARY}/blog`} className="nav-link" rel="noopener">Blog</a>
-              <a href={`${PRIMARY}/pricing`} className="nav-link" rel="noopener">Pricing</a>
-              <a href={DEMO} className="cta" rel="noopener">Book a demo</a>
+
+            <nav className="site-header__nav" aria-label="Primary">
+              {NAV_LINKS.map((l) => (
+                <a key={l.href} href={l.href} className="site-header__link">
+                  {l.label}
+                </a>
+              ))}
+            </nav>
+
+            <div className="site-header__right">
+              <SearchBar entries={searchIndex} triggerLabel="Search" />
+              <a href={DEMO} className="site-header__cta" rel="noopener">
+                Book a demo
+              </a>
             </div>
-          </nav>
+          </div>
         </header>
-        <div className="category-nav" aria-label="Content categories">
-          <ul>
-            <li><a href="/alternatives-to/">Alternatives</a></li>
-            <li><a href="/compare/">Compare</a></li>
-            <li><a href="/glossary/">Glossary</a></li>
-            <li><a href="/learn/">Learn</a></li>
-          </ul>
-        </div>
-        <main className="prose" id="main">{children}</main>
+
+        <main id="main">{children}</main>
+
         <footer className="site-footer">
-          <div className="site-footer-inner">
-            <a href={PRIMARY} className="footer-brand" rel="noopener">
+          <div className="site-footer__top">
+            <div className="site-footer__col site-footer__col--newsletter">
+              <NewsletterCapture
+                variant="footer"
+                eyebrow="Newsletter"
+                headline="The B2B growth read, weekly"
+                blurb="Practical, cited, no filler. Unsubscribe anytime."
+              />
+            </div>
+            <div className="site-footer__col">
+              <h4 className="site-footer__h">Topics</h4>
+              <ul>
+                {NAV_LINKS.map((l) => (
+                  <li key={l.href}>
+                    <a href={l.href}>{l.label}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="site-footer__col">
+              <h4 className="site-footer__h">Abmatic AI</h4>
+              <ul>
+                <li><a href={PRIMARY} rel="noopener">Platform</a></li>
+                <li><a href={`${PRIMARY}/pricing`} rel="noopener">Pricing</a></li>
+                <li><a href={`${PRIMARY}/security`} rel="noopener">Security</a></li>
+                <li><a href={DEMO} rel="noopener">Book a demo</a></li>
+              </ul>
+            </div>
+          </div>
+          <div className="site-footer__bottom">
+            <a href="/" className="site-footer__brand" aria-label="Abmatic AI home">
               <Image
                 src="/brand/logo-horizontal.png"
                 alt="Abmatic AI"
@@ -87,14 +139,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 height={32}
               />
             </a>
-            <nav className="footer-nav">
-              <a href={PRIMARY} rel="noopener">Platform</a>
-              <a href={`${PRIMARY}/blog`} rel="noopener">Blog</a>
-              <a href={`${PRIMARY}/pricing`} rel="noopener">Pricing</a>
-              <a href={`${PRIMARY}/security`} rel="noopener">Security</a>
-              <a href={DEMO} rel="noopener">Book a demo</a>
-            </nav>
-            <small>© {new Date().getFullYear()} Abmatic AI. All rights reserved.</small>
+            <small>© {year} Abmatic AI. All rights reserved.</small>
           </div>
         </footer>
       </body>

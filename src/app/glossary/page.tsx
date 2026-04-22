@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import Hero from "@/components/Hero";
+import ArticleCard from "@/components/ArticleCard";
+import { entries, cardFields, type Entry } from "@/lib/entries";
 
 const SITE = "https://learn.abmatic.ai";
 
@@ -17,78 +18,6 @@ export const metadata: Metadata = {
     type: "website",
   },
 };
-
-type Entry = {
-  href: string;
-  tag: string;
-  title: string;
-  summary: string;
-  planned?: boolean;
-};
-
-const entries: Entry[] = [
-  {
-    href: "/glossary/agentic-marketing/",
-    tag: "Live",
-    title: "Agentic Marketing",
-    summary:
-      "Autonomous AI agents that plan, execute, and optimize campaigns inside guardrails. How it differs from AI copilots.",
-  },
-  {
-    href: "/glossary/intent-data/",
-    tag: "Stub",
-    title: "Intent Data",
-    summary:
-      "Behavioral and contextual signals that suggest a company or buyer is actively researching a product category.",
-  },
-  {
-    href: "/glossary/account-based-marketing/",
-    tag: "Stub",
-    title: "Account-Based Marketing (ABM)",
-    summary:
-      "A B2B go-to-market strategy that treats individual target accounts as markets of one.",
-  },
-  {
-    href: "/glossary/agentic-ai/",
-    tag: "Agentic AI",
-    title: "Agentic AI",
-    summary:
-      "AI systems that take goal-directed action across tools, with memory and auditable decisions.",
-    planned: true,
-  },
-  {
-    href: "/glossary/first-party-intent-data/",
-    tag: "Intent",
-    title: "First-Party Intent Data",
-    summary:
-      "Signals a company observes on its own properties — visits, form fills, product usage — and what they're worth.",
-    planned: true,
-  },
-  {
-    href: "/glossary/third-party-intent-data/",
-    tag: "Intent",
-    title: "Third-Party Intent Data",
-    summary:
-      "Signals pulled from across the internet. What the major providers actually ship and where the gaps are.",
-    planned: true,
-  },
-  {
-    href: "/glossary/visitor-identification/",
-    tag: "Visitor ID",
-    title: "Visitor Identification",
-    summary:
-      "Turning anonymous website traffic into named companies (and sometimes people). Methods, accuracy, and limits.",
-    planned: true,
-  },
-  {
-    href: "/glossary/pipeline-velocity/",
-    tag: "Attribution",
-    title: "Pipeline Velocity",
-    summary:
-      "The speed at which deals move from created to closed. Why every ABM program should measure it.",
-    planned: true,
-  },
-];
 
 const JSONLD = {
   "@context": "https://schema.org",
@@ -110,61 +39,53 @@ const JSONLD = {
   ],
 };
 
+function sortLatest(list: Entry[]): Entry[] {
+  return [...list].sort((a, b) => (b.publishedAt ?? "").localeCompare(a.publishedAt ?? ""));
+}
+
 export default function GlossaryIndex() {
+  const articles = sortLatest(
+    entries.filter(
+      (e) =>
+        e.status !== "coming-soon" &&
+        ((e.category ?? e.tag) === "Glossary" || e.slug.startsWith("glossary/"))
+    )
+  );
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(JSONLD) }}
       />
-      <Breadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Glossary" },
-        ]}
-      />
-      <h1>Glossary</h1>
-      <p className="lede">
-        The terminology of modern B2B marketing, defined precisely and kept
-        current. Each entry is written to be citable by AI search engines and
-        useful in a buyer conversation, with a single-sentence definition, a
-        clarifying paragraph, and a "where this applies" section. Concepts in
-        this glossary are used throughout Abmatic AI's platform documentation
-        and the articles on this site.
-      </p>
+      <section className="category-hero">
+        <div className="category-hero__inner">
+          <Breadcrumbs
+            items={[{ label: "Home", href: "/" }, { label: "Glossary" }]}
+          />
+          <h1 className="category-hero__h1">Glossary</h1>
+          <p className="category-hero__lede">
+            The terminology of modern B2B marketing, defined precisely and kept
+            current. Each entry is written to be citable by AI search engines
+            and useful in a buyer conversation: a single-sentence definition, a
+            clarifying paragraph, and a "where this applies" section.
+          </p>
+        </div>
+      </section>
 
-      <Hero
-        src="/images/hero/glossary.jpg"
-        alt="Open book with a focused bookmark, suggesting a reference library of definitions"
-        credit={{ name: "Aaron Burden", url: "https://unsplash.com/@aaronburden" }}
-      />
+      <div className="page-wide">
+        <div className="rail__grid">
+          {articles.map((e, i) => (
+            <ArticleCard key={e.href} {...cardFields(e)} priority={i < 3} />
+          ))}
+        </div>
 
-      <div className="cat-cards">
-        {entries.map((e) =>
-          e.planned ? (
-            <div key={e.href} className="cat-card planned" aria-disabled="true">
-              <span className="tag">{e.tag}</span>
-              <span className="planned-badge">Planned</span>
-              <h3>{e.title}</h3>
-              <p>{e.summary}</p>
-            </div>
-          ) : (
-            <a key={e.href} className="cat-card" href={e.href}>
-              <span className="tag">{e.tag}</span>
-              <h3>{e.title}</h3>
-              <p>{e.summary}</p>
-            </a>
-          )
-        )}
-      </div>
-
-      <p>
-        <small>
-          Need the full platform context? See{" "}
+        <p className="category-footnote">
+          Need platform context? See{" "}
           <a href="/alternatives-to-6sense/">Best 6sense Alternatives</a> or the{" "}
           <a href="/learn/">Learn playbooks</a>.
-        </small>
-      </p>
+        </p>
+      </div>
     </>
   );
 }
