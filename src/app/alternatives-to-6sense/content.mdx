@@ -1,14 +1,29 @@
 import Schema from "@/components/Schema";
 import ComparisonTable from "@/components/ComparisonTable";
 import CTAInline from "@/components/CTAInline";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import Hero from "@/components/Hero";
+import RelatedArticles from "@/components/RelatedArticles";
 
 <Schema type="BreadcrumbList" data={{
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://abmatic.ai/" },
-    { "@type": "ListItem", position: 2, name: "Compare", item: "https://abmatic.ai/compare/" },
-    { "@type": "ListItem", position: 3, name: "Alternatives to 6sense", item: "https://abmatic.ai/alternatives-to-6sense/" }
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://learn.abmatic.ai/" },
+    { "@type": "ListItem", position: 2, name: "Alternatives", item: "https://learn.abmatic.ai/alternatives-to/" },
+    { "@type": "ListItem", position: 3, name: "Alternatives to 6sense", item: "https://learn.abmatic.ai/alternatives-to-6sense/" }
   ]
 }} />
+
+<Breadcrumbs items={[
+  { label: "Home", href: "/" },
+  { label: "Alternatives", href: "/alternatives-to/" },
+  { label: "Alternatives to 6sense" }
+]} />
+
+<Hero
+  src="/images/hero/sixsense-alts.jpg"
+  alt="Multiple monitors showing analytics charts, representing the platform-evaluation process"
+  credit={{ name: "Christopher Gower", url: "https://unsplash.com/@cgower" }}
+/>
 
 # Best 6sense Alternatives for 2026 — Cheaper, Faster, AI-Native ABM Platforms
 
@@ -217,7 +232,9 @@ Book a 30-minute demo — we will rebuild your current 6sense scoring inside Abm
   secondary={{ label: "Book a migration consultation", href: "https://abmatic.ai/demo?topic=6sense-migration" }}
 />
 
-### Related reading
+<RelatedArticles currentSlug="alternatives-to-6sense" />
+
+### More related reading
 
 - [What is intent data?](/glossary/intent-data/)
 - [What is account-based marketing?](/glossary/account-based-marketing/)

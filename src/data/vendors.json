@@ -1,0 +1,280 @@
+{
+  "_meta": {
+    "schema_version": "1.0",
+    "last_updated": "2026-04-22",
+    "source_policy": "All values are from public sources (vendor websites, G2, TrustRadius, published case studies) as of the last_updated date. Uncertain values are null with a _todo note. Never fabricate. Jimit sign-off required per vendor row before the row is used in a rendered page.",
+    "modules_covered_vocab": [
+      "personalization",
+      "advertising",
+      "intent",
+      "attribution",
+      "orchestration",
+      "pipeline_ai"
+    ]
+  },
+  "vendors": [
+    {
+      "slug": "abmatic",
+      "name": "Abmatic AI",
+      "tagline": "Agentic AI for account-based marketing. Six modules in one platform, deployable in hours.",
+      "price_band": "Mid four- to low five-figures USD/yr",
+      "time_to_value": "Hours to days",
+      "best_for": "Demand-gen and RevOps teams that need unified ABM without a multi-quarter implementation or an in-house RevOps team.",
+      "standout_feature": "Clara, the pipeline AI agent that autonomously plans and runs personalized campaigns across LinkedIn, Google, and Meta alongside 5 other modules in one platform.",
+      "weakness": "Newer entrant than 6sense/Demandbase in third-party intent depth; buyers who need the deepest third-party intent graph in the category will still shortlist the incumbents.",
+      "modules_covered": [
+        "personalization",
+        "advertising",
+        "intent",
+        "attribution",
+        "orchestration",
+        "pipeline_ai"
+      ],
+      "links": {
+        "website": "https://abmatic.ai/",
+        "g2": "https://www.g2.com/products/abmatic-ai",
+        "pricing": "https://abmatic.ai/pricing"
+      },
+      "customer_proof": [
+        { "name": "Ketch", "claim": "4.2x pipeline velocity", "role": "Head of Demand Generation" }
+      ]
+    },
+    {
+      "slug": "6sense",
+      "name": "6sense",
+      "tagline": "Revenue AI for account-based intent and orchestration.",
+      "price_band": "High five- to low six-figures USD/yr",
+      "time_to_value": "8 to 16 weeks typical",
+      "best_for": "Enterprise ABM teams with dedicated RevOps headcount, high budgets, and multi-quarter deployment tolerance.",
+      "standout_feature": "Deepest third-party intent graph in the category, layered with predictive account scoring used by Fortune 500 RevOps teams.",
+      "weakness": "Enterprise pricing and long implementation timelines; requires fluent RevOps team to extract full value; customers cite operational complexity as the top complaint in G2 reviews.",
+      "modules_covered": [
+        "intent",
+        "advertising",
+        "orchestration",
+        "attribution"
+      ],
+      "links": {
+        "website": "https://6sense.com/",
+        "g2": "https://www.g2.com/products/6sense",
+        "pricing": null
+      },
+      "_todo": "price_band pulled from 2024-2025 customer-reported ranges on G2 and Reddit r/b2bmarketing; exact figure varies widely by account size. Jimit: confirm low-bound before first render."
+    },
+    {
+      "slug": "demandbase",
+      "name": "Demandbase",
+      "tagline": "The Account-Based Experience platform. Account Intelligence plus Orchestration.",
+      "price_band": "High five- to low six-figures USD/yr",
+      "time_to_value": "8 to 16 weeks typical",
+      "best_for": "Global enterprises with Salesforce plus Marketo stacks, dedicated ABM programs, and procurement processes that prefer Forrester Wave Leaders.",
+      "standout_feature": "Account Intelligence layering of firmographic, technographic, and intent data with orchestration tied directly to Salesforce custom objects.",
+      "weakness": "Implementation and ongoing operation assume a marketing-operations team fluent in SQL and Salesforce custom objects; pricing sits firmly in enterprise band.",
+      "modules_covered": [
+        "intent",
+        "advertising",
+        "orchestration",
+        "attribution"
+      ],
+      "links": {
+        "website": "https://www.demandbase.com/",
+        "g2": "https://www.g2.com/products/demandbase",
+        "pricing": null
+      },
+      "_todo": "price_band estimated from public G2 reviews and Forrester Wave 2024 commentary; no vendor-published pricing as of 2026-04-22."
+    },
+    {
+      "slug": "mutiny",
+      "name": "Mutiny",
+      "tagline": "Personalize your website for every buyer, in every account.",
+      "price_band": "Mid five-figures USD/yr",
+      "time_to_value": "2 to 6 weeks",
+      "best_for": "Growth marketing teams that already have a working ABM stack and need to layer AI-generated web and landing-page personalization without migrating the rest of the stack.",
+      "standout_feature": "AI-generated headline and copy variants plus account-level web personalization with pipeline-attributed reporting.",
+      "weakness": "Personalization specialist; does not provide third-party intent data, does not run paid ads, does not identify in-market accounts on its own; complements rather than replaces full ABM platforms.",
+      "modules_covered": [
+        "personalization"
+      ],
+      "links": {
+        "website": "https://mutiny.com/",
+        "g2": "https://www.g2.com/products/mutiny",
+        "pricing": null
+      },
+      "_todo": "price_band from 2024 G2 customer reviews mentioning mid-5-figure ACV; Mutiny does not publish pricing."
+    },
+    {
+      "slug": "warmly",
+      "name": "Warmly",
+      "tagline": "See who is visiting your site. Route them to sales in real time.",
+      "price_band": "Low to mid five-figures USD/yr",
+      "time_to_value": "Days to a week",
+      "best_for": "SMB and lower-mid-market teams whose primary ABM motion is identifying website visitors and routing them to outbound or live chat.",
+      "standout_feature": "Visitor identification plus outbound routing with live-chat and SDR hand-off, deployable in days.",
+      "weakness": "Not a full ABM platform; intent data is primarily first-party (website behavior), not the third-party intent graph of 6sense or Demandbase; limited paid media orchestration.",
+      "modules_covered": [
+        "intent",
+        "orchestration"
+      ],
+      "links": {
+        "website": "https://warmly.ai/",
+        "g2": "https://www.g2.com/products/warmly",
+        "pricing": "https://warmly.ai/pricing"
+      }
+    },
+    {
+      "slug": "rb2b",
+      "name": "RB2B",
+      "tagline": "Person-level U.S. website visitor identification. Pushed to Slack.",
+      "price_band": "Low four-figures USD/yr",
+      "time_to_value": "Under an hour to install",
+      "best_for": "Lean 1-3-person marketing teams that want U.S. person-level visitor identification and nothing else.",
+      "standout_feature": "Person-level (not just company-level) U.S. visitor identification with LinkedIn enrichment pushed to Slack or CRM.",
+      "weakness": "U.S. traffic only; single-purpose tool with no personalization, no paid orchestration, no intent data beyond first-party site visits.",
+      "modules_covered": [
+        "intent"
+      ],
+      "links": {
+        "website": "https://rb2b.com/",
+        "g2": "https://www.g2.com/products/rb2b",
+        "pricing": "https://rb2b.com/pricing"
+      }
+    },
+    {
+      "slug": "hubspot-breeze",
+      "name": "HubSpot Breeze",
+      "tagline": "HubSpot's AI layer, with Clearbit enrichment and in-CRM intent.",
+      "price_band": "Bundled with HubSpot Enterprise or higher",
+      "time_to_value": "Hours if already on HubSpot",
+      "best_for": "HubSpot-native companies that want enrichment, in-CRM intent, and light ABM without adding another tool.",
+      "standout_feature": "Native enrichment on every form fill and company lookup inside HubSpot, with a growing set of intent signals post-Clearbit acquisition.",
+      "weakness": "Works best only for HubSpot customers; account-based advertising sophistication lags dedicated ABM platforms; not designed for named-account programs with multi-channel paid orchestration.",
+      "modules_covered": [
+        "intent",
+        "personalization"
+      ],
+      "links": {
+        "website": "https://www.hubspot.com/products/artificial-intelligence",
+        "g2": "https://www.g2.com/products/hubspot-breeze",
+        "pricing": "https://www.hubspot.com/pricing/marketing"
+      },
+      "_todo": "Bundling changes as HubSpot rolls out Breeze Intelligence tiers; verify current inclusions before first render."
+    },
+    {
+      "slug": "koala",
+      "name": "Koala",
+      "tagline": "The signal triage layer for modern sales teams.",
+      "price_band": "Low five-figures USD/yr",
+      "time_to_value": "1 to 2 weeks",
+      "best_for": "Product-led and mid-market companies whose SDRs need weighted-signal account ranking pulled from website, product-usage, and third-party intent sources.",
+      "standout_feature": "Real-time weighted signal scoring that surfaces which accounts sales should contact today, especially strong for product-led motions.",
+      "weakness": "Triage layer, not a full ABM platform; customers typically pair Koala with a visitor-ID tool and a personalization tool to get parity with 6sense/Demandbase coverage.",
+      "modules_covered": [
+        "intent"
+      ],
+      "links": {
+        "website": "https://getkoala.com/",
+        "g2": "https://www.g2.com/products/koala",
+        "pricing": "https://getkoala.com/pricing"
+      }
+    },
+    {
+      "slug": "common-room",
+      "name": "Common Room",
+      "tagline": "Community signals for B2B go-to-market.",
+      "price_band": "Mid five-figures USD/yr",
+      "time_to_value": "2 to 4 weeks",
+      "best_for": "B2B companies whose buyers live in Slack communities, GitHub, Reddit, Discord, and newsletters rather than in traditional CRM data.",
+      "standout_feature": "Cross-community signal graph that ingests Slack, GitHub, Discord, podcast mentions, and newsletters into unified account and person signals.",
+      "weakness": "Specialist for community-led businesses (dev tools, infrastructure, community-led SaaS); limited value for companies whose buyers do not show up in community channels.",
+      "modules_covered": [
+        "intent"
+      ],
+      "links": {
+        "website": "https://www.commonroom.io/",
+        "g2": "https://www.g2.com/products/common-room",
+        "pricing": null
+      },
+      "_todo": "Common Room prices by community signal volume; mid-5-figure is a rough band from 2024 G2 reviews."
+    },
+    {
+      "slug": "qualified",
+      "name": "Qualified",
+      "tagline": "The AI SDR for Salesforce. Piper works inbound on your website.",
+      "price_band": "Mid to high five-figures USD/yr",
+      "time_to_value": "4 to 8 weeks",
+      "best_for": "Enterprise Salesforce-native teams whose bottleneck is converting inbound website traffic into qualified conversations.",
+      "standout_feature": "Piper, the AI SDR agent, handling initial qualification and routing directly inside the Salesforce data model.",
+      "weakness": "Heavy Salesforce dependency; pricing and deployment reflect enterprise-inbound focus; not a full ABM platform for outbound account orchestration.",
+      "modules_covered": [
+        "orchestration",
+        "pipeline_ai"
+      ],
+      "links": {
+        "website": "https://www.qualified.com/",
+        "g2": "https://www.g2.com/products/qualified-com",
+        "pricing": null
+      }
+    },
+    {
+      "slug": "hockeystack",
+      "name": "HockeyStack",
+      "tagline": "Self-serve multi-touch attribution for B2B marketing teams.",
+      "price_band": "Low to mid five-figures USD/yr",
+      "time_to_value": "1 to 3 weeks",
+      "best_for": "Attribution-obsessed demand-gen teams that need multi-touch pipeline attribution and journey analytics without a dedicated BI function.",
+      "standout_feature": "Self-serve multi-touch attribution with journey analytics and cross-channel ROI reporting accessible to marketers, not just analysts.",
+      "weakness": "Attribution platform, not an ABM activation platform; does not run paid media, does not identify in-market accounts, does not personalize web experiences.",
+      "modules_covered": [
+        "attribution"
+      ],
+      "links": {
+        "website": "https://hockeystack.com/",
+        "g2": "https://www.g2.com/products/hockeystack",
+        "pricing": "https://hockeystack.com/pricing"
+      }
+    },
+    {
+      "slug": "zoominfo",
+      "name": "ZoomInfo",
+      "tagline": "The B2B data and intelligence platform.",
+      "price_band": "High five- to low six-figures USD/yr",
+      "time_to_value": "4 to 12 weeks depending on integrations",
+      "best_for": "Sales-heavy organizations that prioritize contact and company data depth over marketing activation.",
+      "standout_feature": "Breadth and depth of B2B contact and company data, with the most-cited database in enterprise procurement cycles.",
+      "weakness": "Strongest at contact data and enrichment; account-based advertising, web personalization, and pipeline AI agent sophistication lag purpose-built ABM platforms; contract lock-in and renewal experience are frequent G2 review themes.",
+      "modules_covered": [
+        "intent",
+        "orchestration"
+      ],
+      "links": {
+        "website": "https://www.zoominfo.com/",
+        "g2": "https://www.g2.com/products/zoominfo-salesos",
+        "pricing": null
+      },
+      "_todo": "ZoomInfo bundles multiple SKUs (SalesOS, MarketingOS, OperationsOS); price_band reflects combined MarketingOS-relevant package; confirm scope before first render."
+    }
+  ],
+  "pair_filter": {
+    "description": "The set of pair slugs that generateStaticParams should enumerate. Each slug is `{a-slug}-vs-{b-slug}` with the two vendors alphabetically sorted EXCEPT Abmatic, which always sorts first to keep canonical URLs consistent with existing on-site patterns.",
+    "pairs": [
+      "abmatic-vs-6sense",
+      "abmatic-vs-demandbase",
+      "abmatic-vs-mutiny",
+      "abmatic-vs-qualified",
+      "abmatic-vs-warmly",
+      "abmatic-vs-zoominfo",
+      "abmatic-vs-rb2b",
+      "abmatic-vs-hubspot-breeze",
+      "abmatic-vs-koala",
+      "abmatic-vs-common-room",
+      "abmatic-vs-hockeystack",
+      "6sense-vs-demandbase",
+      "6sense-vs-mutiny",
+      "6sense-vs-zoominfo",
+      "demandbase-vs-mutiny",
+      "demandbase-vs-zoominfo",
+      "mutiny-vs-warmly",
+      "warmly-vs-rb2b"
+    ]
+  }
+}

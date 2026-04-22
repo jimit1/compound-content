@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import Hero from "@/components/Hero";
+import RelatedArticles from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
   title: "What Is Account-Based Marketing (ABM)?",
@@ -55,6 +58,18 @@ export default function AbmStub() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSONLD) }} />
+      <Breadcrumbs
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Glossary", href: "/glossary/" },
+          { label: "Account-Based Marketing" },
+        ]}
+      />
+      <Hero
+        src="/images/hero/abm.jpg"
+        alt="Two B2B professionals shaking hands, representing the account-based sales and marketing handoff"
+        credit={{ name: "Hunters Race", url: "https://unsplash.com/@huntersrace" }}
+      />
       <h1>What Is Account-Based Marketing (ABM)?</h1>
       <p>
         <strong>
@@ -85,13 +100,7 @@ export default function AbmStub() {
           See how Abmatic AI runs ABM — 30 minute demo
         </a>
       </p>
-      <hr />
-      <p>
-        <small>
-          Related: <a href="/alternatives-to-6sense/">Best 6sense Alternatives for 2026</a>{" "}
-          · <a href="/glossary/agentic-marketing/">What Is Agentic Marketing?</a>
-        </small>
-      </p>
+      <RelatedArticles currentSlug="account-based-marketing" />
     </>
   );
 }

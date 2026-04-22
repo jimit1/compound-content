@@ -1,13 +1,29 @@
 import Schema from "@/components/Schema";
 import CTAInline from "@/components/CTAInline";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import Hero from "@/components/Hero";
+import RelatedArticles from "@/components/RelatedArticles";
+import ThreeLayerFramework from "@/components/ThreeLayerFramework";
 
 <Schema type="BreadcrumbList" data={{
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://abmatic.ai/" },
-    { "@type": "ListItem", position: 2, name: "Glossary", item: "https://abmatic.ai/glossary/" },
-    { "@type": "ListItem", position: 3, name: "Agentic Marketing", item: "https://abmatic.ai/glossary/agentic-marketing/" }
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://learn.abmatic.ai/" },
+    { "@type": "ListItem", position: 2, name: "Glossary", item: "https://learn.abmatic.ai/glossary/" },
+    { "@type": "ListItem", position: 3, name: "Agentic Marketing", item: "https://learn.abmatic.ai/glossary/agentic-marketing/" }
   ]
 }} />
+
+<Breadcrumbs items={[
+  { label: "Home", href: "/" },
+  { label: "Glossary", href: "/glossary/" },
+  { label: "Agentic Marketing" }
+]} />
+
+<Hero
+  src="/images/hero/agentic.jpg"
+  alt="Abstract neural network visualization suggesting autonomous AI systems"
+  credit={{ name: "Google DeepMind", url: "https://unsplash.com/@googledeepmind" }}
+/>
 
 <Schema type="DefinedTerm" data={{
   name: "Agentic Marketing",
@@ -29,6 +45,8 @@ We build [Abmatic](https://abmatic.ai/), a B2B marketing platform whose core pos
 ## The three-layer framework
 
 To understand where agentic marketing fits, it helps to place it alongside the two earlier phases of AI in the marketing stack.
+
+<ThreeLayerFramework />
 
 **Layer 1 — AI-assisted marketing.** The AI suggests; the human decides. Examples: subject-line recommenders, AI-generated first-draft copy, predictive lead scores surfaced for a human to action, generative-AI image tools. This is the mode most marketing teams are operating in today. The AI is a suggestion engine; the workflow is still human-driven.
 
@@ -201,7 +219,9 @@ We built [Abmatic](https://abmatic.ai/) to be the operating example of agentic m
   secondary={{ label: "About Abmatic AI", href: "https://abmatic.ai/about" }}
 />
 
-### Related reading
+<RelatedArticles currentSlug="agentic-marketing" />
+
+### More related reading
 
 - [What is account-based marketing?](/glossary/account-based-marketing/)
 - [What is intent data?](/glossary/intent-data/)

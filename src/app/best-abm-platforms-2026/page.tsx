@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import Hero from "@/components/Hero";
+import RelatedArticles from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
   title: "Best ABM Platforms for 2026",
@@ -36,7 +39,8 @@ const JSONLD = {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: "https://learn.abmatic.ai/" },
-        { "@type": "ListItem", position: 2, name: "Best ABM Platforms 2026", item: "https://learn.abmatic.ai/best-abm-platforms-2026/" },
+        { "@type": "ListItem", position: 2, name: "Learn", item: "https://learn.abmatic.ai/learn/" },
+        { "@type": "ListItem", position: 3, name: "Best ABM Platforms 2026", item: "https://learn.abmatic.ai/best-abm-platforms-2026/" },
       ],
     },
   ],
@@ -46,6 +50,18 @@ export default function BestAbmStub() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSONLD) }} />
+      <Breadcrumbs
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Learn", href: "/learn/" },
+          { label: "Best ABM Platforms 2026" },
+        ]}
+      />
+      <Hero
+        src="/images/hero/best-abm.jpg"
+        alt="Modern business workspace with laptop and coffee, representing deep B2B platform research"
+        credit={{ name: "Austin Distel", url: "https://unsplash.com/@austindistel" }}
+      />
       <h1>Best ABM Platforms for 2026</h1>
       <p>
         A reasoned, buyer-first comparison of the best account-based marketing
@@ -73,13 +89,7 @@ export default function BestAbmStub() {
           Skip the evaluation, see Abmatic AI in 30 minutes
         </a>
       </p>
-      <hr />
-      <p>
-        <small>
-          Related: <a href="/alternatives-to-6sense/">Best 6sense Alternatives for 2026</a>{" "}
-          · <a href="/glossary/agentic-marketing/">What Is Agentic Marketing?</a>
-        </small>
-      </p>
+      <RelatedArticles currentSlug="best-abm-platforms-2026" />
     </>
   );
 }

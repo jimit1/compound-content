@@ -68,6 +68,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
           </nav>
         </header>
+        <div className="category-nav" aria-label="Content categories">
+          <ul>
+            <li><a href="/alternatives-to/">Alternatives</a></li>
+            <li><a href="/compare/">Compare</a></li>
+            <li><a href="/glossary/">Glossary</a></li>
+            <li><a href="/learn/">Learn</a></li>
+          </ul>
+        </div>
         <main className="prose" id="main">{children}</main>
         <footer className="site-footer">
           <div className="site-footer-inner">

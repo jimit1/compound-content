@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import Hero from "@/components/Hero";
+import RelatedArticles from "@/components/RelatedArticles";
 
 export const metadata: Metadata = {
   title: "What Is Intent Data?",
@@ -52,6 +55,18 @@ export default function IntentDataStub() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSONLD) }} />
+      <Breadcrumbs
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Glossary", href: "/glossary/" },
+          { label: "Intent Data" },
+        ]}
+      />
+      <Hero
+        src="/images/hero/intent-data.jpg"
+        alt="Close-up of a circuit board representing signals flowing through a system"
+        credit={{ name: "Alexandre Debieve", url: "https://unsplash.com/@alexkixa" }}
+      />
       <h1>What Is Intent Data?</h1>
       <p>
         <strong>
@@ -87,13 +102,7 @@ export default function IntentDataStub() {
           Book a 30-minute demo
         </a>
       </p>
-      <hr />
-      <p>
-        <small>
-          Related: <a href="/alternatives-to-6sense/">Best 6sense Alternatives for 2026</a>{" "}
-          · <a href="/glossary/agentic-marketing/">What Is Agentic Marketing?</a>
-        </small>
-      </p>
+      <RelatedArticles currentSlug="intent-data" />
     </>
   );
 }
