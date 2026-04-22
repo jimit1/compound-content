@@ -25,5 +25,9 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <Content />;
+  return (
+    <article className="prose has-dropcap">
+      <Content />
+    </article>
+  );
 }
