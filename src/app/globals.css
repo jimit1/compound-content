@@ -21,8 +21,7 @@ body {
 /* Header */
 .site-header { border-bottom: 1px solid var(--rule); background: #fff; position: sticky; top: 0; z-index: 10; }
 .site-header nav { max-width: var(--max-wide); margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; }
-.brand { font-weight: 700; text-decoration: none; color: var(--fg); font-size: 17px; }
-.brand span { color: var(--fg-dim); font-weight: 500; }
+/* Legacy text-brand rules superseded by logo image. */
 .nav-right { display: flex; gap: 18px; align-items: center; }
 .nav-right a { text-decoration: none; color: var(--fg-dim); font-size: 15px; }
 .nav-right a:hover { color: var(--fg); }
@@ -59,7 +58,17 @@ body {
 .cta-inline .cta-secondary { color: var(--accent); text-decoration: underline; font-size: 0.95rem; }
 
 /* Footer */
-.site-footer { border-top: 1px solid var(--rule); padding: 24px 20px; text-align: center; color: var(--fg-dim); font-size: 13px; background: #fafbfc; }
+.site-footer { border-top: 1px solid var(--rule); padding: 28px 20px; background: #fafbfc; color: var(--fg-dim); font-size: 14px; }
+.site-footer-inner { max-width: var(--max-wide); margin: 0 auto; display: flex; flex-direction: column; gap: 14px; align-items: center; text-align: center; }
+.footer-brand { display: inline-flex; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 18px; justify-content: center; }
+.footer-nav a { color: var(--fg-dim); text-decoration: none; }
+.footer-nav a:hover { color: var(--fg); }
+
+/* Header brand link wraps the logo */
+.brand { display: inline-flex; align-items: center; line-height: 0; }
+.nav-link { text-decoration: none; color: var(--fg-dim); font-size: 15px; }
+.nav-link:hover { color: var(--fg); }
 
 /* Index / home page */
 .index-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin: 2em 0; }
