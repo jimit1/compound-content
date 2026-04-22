@@ -16,9 +16,36 @@ export const metadata: Metadata = {
   },
 };
 
+const JSONLD = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      headline: "Best ABM Platforms for 2026",
+      datePublished: "2026-04-22",
+      dateModified: "2026-04-22",
+      author: { "@type": "Organization", name: "Abmatic AI", url: "https://abmatic.ai/" },
+      publisher: {
+        "@type": "Organization",
+        name: "Abmatic AI",
+        logo: { "@type": "ImageObject", url: "https://learn.abmatic.ai/brand/logo-horizontal.png" },
+      },
+      mainEntityOfPage: "https://learn.abmatic.ai/best-abm-platforms-2026/",
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://learn.abmatic.ai/" },
+        { "@type": "ListItem", position: 2, name: "Best ABM Platforms 2026", item: "https://learn.abmatic.ai/best-abm-platforms-2026/" },
+      ],
+    },
+  ],
+};
+
 export default function BestAbmStub() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSONLD) }} />
       <h1>Best ABM Platforms for 2026</h1>
       <p>
         A reasoned, buyer-first comparison of the best account-based marketing

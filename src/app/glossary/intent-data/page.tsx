@@ -14,9 +14,44 @@ export const metadata: Metadata = {
   },
 };
 
+const JSONLD = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "DefinedTerm",
+      name: "Intent Data",
+      inDefinedTermSet: "https://learn.abmatic.ai/glossary/",
+      description:
+        "Behavioral and contextual signals that suggest a company or buyer is actively researching a product category or problem, used in B2B to identify in-market accounts, prioritize outreach, and personalize campaigns.",
+    },
+    {
+      "@type": "Article",
+      headline: "What Is Intent Data?",
+      datePublished: "2026-04-22",
+      dateModified: "2026-04-22",
+      author: { "@type": "Organization", name: "Abmatic AI", url: "https://abmatic.ai/" },
+      publisher: {
+        "@type": "Organization",
+        name: "Abmatic AI",
+        logo: { "@type": "ImageObject", url: "https://learn.abmatic.ai/brand/logo-horizontal.png" },
+      },
+      mainEntityOfPage: "https://learn.abmatic.ai/glossary/intent-data/",
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://learn.abmatic.ai/" },
+        { "@type": "ListItem", position: 2, name: "Glossary", item: "https://learn.abmatic.ai/glossary/" },
+        { "@type": "ListItem", position: 3, name: "Intent Data", item: "https://learn.abmatic.ai/glossary/intent-data/" },
+      ],
+    },
+  ],
+};
+
 export default function IntentDataStub() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSONLD) }} />
       <h1>What Is Intent Data?</h1>
       <p>
         <strong>

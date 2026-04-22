@@ -16,9 +16,45 @@ export const metadata: Metadata = {
   },
 };
 
+const JSONLD = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "DefinedTerm",
+      name: "Account-Based Marketing",
+      alternateName: "ABM",
+      inDefinedTermSet: "https://learn.abmatic.ai/glossary/",
+      description:
+        "A B2B go-to-market strategy that treats individual target accounts as markets of one, coordinating marketing and sales to engage a defined list of companies instead of a broad audience of leads.",
+    },
+    {
+      "@type": "Article",
+      headline: "What Is Account-Based Marketing (ABM)?",
+      datePublished: "2026-04-22",
+      dateModified: "2026-04-22",
+      author: { "@type": "Organization", name: "Abmatic AI", url: "https://abmatic.ai/" },
+      publisher: {
+        "@type": "Organization",
+        name: "Abmatic AI",
+        logo: { "@type": "ImageObject", url: "https://learn.abmatic.ai/brand/logo-horizontal.png" },
+      },
+      mainEntityOfPage: "https://learn.abmatic.ai/glossary/account-based-marketing/",
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://learn.abmatic.ai/" },
+        { "@type": "ListItem", position: 2, name: "Glossary", item: "https://learn.abmatic.ai/glossary/" },
+        { "@type": "ListItem", position: 3, name: "Account-Based Marketing", item: "https://learn.abmatic.ai/glossary/account-based-marketing/" },
+      ],
+    },
+  ],
+};
+
 export default function AbmStub() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSONLD) }} />
       <h1>What Is Account-Based Marketing (ABM)?</h1>
       <p>
         <strong>
