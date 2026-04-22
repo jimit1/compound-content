@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://learn.abmatic.ai/sitemap.xml
+
+# IndexNow key verification: /f6bd10dec6c267d440c8b4b83bfd0cb3.txt
