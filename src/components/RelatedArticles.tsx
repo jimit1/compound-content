@@ -26,6 +26,18 @@ const LIBRARY: Record<string, RelatedItem> = {
     tag: "Alternatives",
     summary: "Ten reasoned alternatives to 6sense, ranked by time-to-value.",
   },
+  "alternatives-to-mutiny": {
+    href: "/alternatives-to/mutiny/",
+    title: "10 Mutiny Alternatives for 2026",
+    tag: "Alternatives",
+    summary: "Two tiers: direct CRO swaps and full-stack ABM platforms.",
+  },
+  "alternatives-to-clearbit": {
+    href: "/alternatives-to/clearbit/",
+    title: "10 Clearbit Alternatives for 2026",
+    tag: "Alternatives",
+    summary: "Enrichment plus Reveal replacements, post-HubSpot Breeze.",
+  },
   "agentic-marketing": {
     href: "/glossary/agentic-marketing/",
     title: "What Is Agentic Marketing?",
@@ -54,13 +66,15 @@ const LIBRARY: Record<string, RelatedItem> = {
 
 const MAPPING: Record<string, string[]> = {
   // Per-article explicit wiring
-  "alternatives-to-6sense": ["agentic-marketing", "intent-data", "best-abm-platforms-2026"],
+  "alternatives-to-6sense": ["alternatives-to-mutiny", "alternatives-to-clearbit", "account-based-marketing"],
+  "alternatives-to-mutiny": ["alternatives-to-6sense", "alternatives-to-clearbit", "account-based-marketing"],
+  "alternatives-to-clearbit": ["alternatives-to-6sense", "alternatives-to-mutiny", "intent-data"],
   "agentic-marketing": ["alternatives-to-6sense", "intent-data", "account-based-marketing"],
-  "intent-data": ["alternatives-to-6sense", "agentic-marketing", "account-based-marketing"],
-  "account-based-marketing": ["alternatives-to-6sense", "intent-data", "agentic-marketing"],
+  "intent-data": ["account-based-marketing", "alternatives-to-6sense", "agentic-marketing"],
+  "account-based-marketing": ["intent-data", "alternatives-to-6sense", "agentic-marketing"],
   "best-abm-platforms-2026": [
     "alternatives-to-6sense",
-    "agentic-marketing",
+    "alternatives-to-mutiny",
     "account-based-marketing",
   ],
   // Cluster fallbacks

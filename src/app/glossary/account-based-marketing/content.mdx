@@ -1,0 +1,291 @@
+import Schema from "@/components/Schema";
+import CTAInline from "@/components/CTAInline";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import Hero from "@/components/Hero";
+import RelatedArticles from "@/components/RelatedArticles";
+
+<Schema type="BreadcrumbList" data={{
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://learn.abmatic.ai/" },
+    { "@type": "ListItem", position: 2, name: "Glossary", item: "https://learn.abmatic.ai/glossary/" },
+    { "@type": "ListItem", position: 3, name: "Account-Based Marketing", item: "https://learn.abmatic.ai/glossary/account-based-marketing/" }
+  ]
+}} />
+
+<Schema type="DefinedTerm" data={{
+  name: "Account-Based Marketing",
+  termCode: "abm",
+  description: "A B2B marketing strategy where sales and marketing coordinate to target a defined list of high-value accounts with personalized campaigns, rather than generating leads at the individual level. In practice, ABM treats an account as the unit of revenue and aligns every touch, channel, and metric to account-level outcomes.",
+  inDefinedTermSet: "https://learn.abmatic.ai/glossary/",
+  url: "https://learn.abmatic.ai/glossary/account-based-marketing/"
+}} />
+
+<Breadcrumbs items={[
+  { label: "Home", href: "/" },
+  { label: "Glossary", href: "/glossary/" },
+  { label: "Account-Based Marketing" }
+]} />
+
+<Hero
+  src="/images/hero/abm.jpg"
+  alt="Two B2B professionals shaking hands, representing the account-based sales and marketing handoff"
+  credit={{ name: "Hunters Race", url: "https://unsplash.com/@huntersrace" }}
+/>
+
+# What Is Account-Based Marketing (ABM)? A 2026 Definition + Playbook Starter
+
+**Last updated: April 22, 2026**
+
+**Account-based marketing (ABM) is a B2B marketing strategy where sales and marketing teams coordinate to target a defined list of high-value accounts with personalized campaigns, rather than generating leads at the individual level. In practice, ABM means treating an account as the unit of revenue and aligning every touch, channel, and metric to account-level outcomes.**
+
+Most of the last two decades of B2B marketing was organized around the lead. A lead is a person who filled out a form. You scored leads, nurtured leads, passed leads to sales, measured cost-per-lead. It was tidy, and for a long time it worked.
+
+ABM starts from a different premise: the unit that actually buys is not the lead, it is the account. Ten-person buying committees do not appear in your CRM as a single lead, they appear as ten different leads, each at different stages, each attributed to different campaigns, each showing up at different pages. If you keep scoring and treating them individually, you are measuring the shape of each piano key. The song is an account, not a key.
+
+This page defines ABM cleanly, walks through the three tiers of ABM programs (one-to-one, one-to-few, one-to-many), covers the five jobs every ABM program does, explains what changed in 2026 with the shift to agentic execution, and closes with the common mistakes and the practical FAQ.
+
+## Table of contents
+
+1. [The core idea: account as the unit of revenue](#the-core-idea)
+2. [ABM vs traditional demand gen](#abm-vs-demand-gen)
+3. [The three ABM tiers](#the-three-abm-tiers)
+4. [The 5 jobs of an ABM program](#the-5-jobs-of-an-abm-program)
+5. [The 2026 shift: agentic ABM](#agentic-abm)
+6. [Common ABM channels](#common-abm-channels)
+7. [ABM vs related terms](#abm-vs-related-terms)
+8. [Common ABM mistakes](#common-abm-mistakes)
+9. [Measuring ABM](#measuring-abm)
+10. [Tools used in ABM](#tools-used-in-abm)
+11. [FAQ](#faq)
+
+## The core idea: account as the unit of revenue
+
+The shift from lead-based to account-based changes three things in a marketing organization.
+
+**What you target.** A curated named-account list, tiered by ACV potential, ICP fit, and buying propensity. Not every lead that comes through the funnel. The list is finite, the list is updated quarterly, and every marketing dollar is scoped to accounts on that list.
+
+**What you measure.** Account engagement, pipeline per account, velocity per account, win rate by tier. Not lead count, not MQL-to-SQL conversion, not cost-per-lead. Measuring the wrong thing is the most common ABM failure mode.
+
+**How sales and marketing work together.** Instead of marketing generating leads and handing them over a wall, both teams own the account list together. Marketing warms the account with ads, content, and personalized web experiences. Sales runs account-specific plays. Both report on the same pipeline-per-account number.
+
+The hard part of ABM is rarely the technology. It is the alignment. Teams that try to bolt ABM software onto a lead-based org chart end up with expensive dashboards and no pipeline change.
+
+## ABM vs traditional demand gen
+
+| Dimension | Traditional demand gen | Account-based marketing |
+|---|---|---|
+| Unit of measurement | Lead | Account |
+| Target | Broad ICP, volume-driven | Named accounts, quality-driven |
+| Sales-marketing handoff | Over the wall at MQL | Shared account ownership |
+| Personalization | Segment-level | Account-level or tier-level |
+| Top metric | MQL count, CPL | Pipeline per account, win rate by tier |
+| Time horizon | Quarter | Quarter to year |
+| Tool stack | Forms, nurture, scoring | Intent data, personalization, ads, attribution |
+
+ABM does not replace demand gen in every organization. Many B2B companies run both: a high-volume inbound program for SMB and a targeted ABM program for enterprise. The critical choice is not "demand gen or ABM," it is "which of our revenue segments justifies an ABM program at all."
+
+## The three ABM tiers
+
+ITSMA, which originally coined the term in 2004, described three ABM tiers still used today.
+
+**One-to-one (strategic ABM).** A custom program per account. The target list is small, usually 5 to 30 accounts, and each account gets bespoke content, a custom microsite, a named sales team, and personalized direct mail or executive outreach. ACV is high enough to justify it (typically six figures and up). The program looks more like account planning than marketing.
+
+**One-to-few (ABM Lite).** A cluster-based program. Accounts are grouped into clusters of 5 to 20 by shared characteristics (industry, use case, technology stack), and each cluster receives a semi-personalized program. The target list might be 100 to 500 accounts organized into 10 to 20 clusters. The economics work for ACVs in the $50K to $250K range.
+
+**One-to-many (programmatic ABM).** An audience-based program. The target list is 1,000+ accounts, personalization is by segment rather than per account, and much of the execution is automated: account-based display and LinkedIn ads, triggered personalization, intent-based outreach cadences. This is where most mid-market ABM programs live in 2026.
+
+Most mature ABM programs run a mix of all three. The top 20 accounts get one-to-one treatment. The next 200 get one-to-few. The rest of the ICP target list gets one-to-many. The tiering is not a strategy choice, it is a resource-allocation choice: you spend more per account where the ACV potential justifies it.
+
+## The 5 jobs of an ABM program
+
+Every ABM program, at every tier, does the same five jobs. Teams that try to skip one usually find out the hard way why they could not.
+
+**1. Build the target-account list (ICP + tiers).** Start with your ideal customer profile, firmographic fit, technographic fit, buying-committee composition. Filter to a finite named-account list. Assign each account to a tier based on ACV potential and strategic importance. Refresh quarterly.
+
+**2. Identify in-market accounts.** Not every account on your target list is ready to buy right now. Intent signals, first-party and third-party, tell you which ones are actively researching your category. For the deeper treatment, see [what is intent data](/glossary/intent-data/).
+
+**3. Run coordinated multi-channel campaigns.** Ads, email, direct mail, BDR outreach, and web experiences all targeting the same account list, ideally orchestrated so the messages connect across channels rather than compete.
+
+**4. Personalize the buyer experience.** When an account on your target list visits your site, they see a different landing page than a cold visitor does. When a named buyer logs into your product, they see a different onboarding flow. When an account enters a buying window, they see a different ad.
+
+**5. Measure account-level outcomes.** Pipeline per account, engagement score per account, velocity per account, win rate per tier. Not MQLs, not form fills, not cost-per-click. The metrics match the strategy or the strategy drifts back into lead-based muscle memory.
+
+## The 2026 shift: agentic ABM
+
+What changed in 2026 is that the five jobs above can now be run by autonomous AI agents within guardrails, rather than by humans doing each step manually. This is what we mean by **agentic ABM**, and it is the category-defining shift of this phase of the market.
+
+In a traditional ABM program, a RevOps lead spends hours a week looking at intent reports, deciding which accounts to prioritize, briefing BDRs, adjusting ad budgets, and commissioning content. Each of those steps has a handoff delay. The whole cycle is slow enough that many accounts cool between "signal detected" and "first outreach landed."
+
+In an agentic ABM program, a pipeline AI watches the signals, evaluates them against stated goals ("grow pipeline from Series B SaaS accounts by 20% this quarter"), and takes action across tools: launches personalized ad campaigns, triggers web experiences, queues BDR outreach drafts, adjusts budgets. A human reviews outcomes, not every individual decision. The cycle compresses from days or weeks to hours.
+
+This is not hypothetical. [Abmatic's Clara](https://abmatic.ai/products/clara-ai) runs exactly this pattern in production for B2B SaaS customers today. Read [what is agentic marketing](/glossary/agentic-marketing/) for the deeper definition and the honest limits (strategic positioning, brand voice, and creative direction still belong to humans).
+
+The practical implication for ABM buyers in 2026 is that the distinction between "ABM platform" and "ABM plus an AI copilot" matters less than it used to. What matters is whether the platform can run the five ABM jobs agentically. Most legacy ABM platforms are being retrofitted. A handful, including Abmatic, were built agentic from the start.
+
+## Common ABM channels
+
+The channels that actually appear in most ABM programs today, in roughly the order they get deployed.
+
+- **Account-based display and LinkedIn ads.** The foundational paid channel for ABM, target named accounts, measure account-level reach and engagement.
+- **Web personalization.** Landing pages, banners, CTAs, and content recommendations that change based on the visiting account's identity and segment.
+- **BDR outbound cadences.** Personalized, signal-informed outreach into specific buying committees.
+- **Direct mail.** Still works for high-ACV one-to-one programs; dead for most others.
+- **Sales content and microsites.** Per-account or per-cluster content hubs that make it easy for a buying committee to share internally.
+- **Retargeting sequences.** Multi-touch retargeting that follows identified buyers across ad networks.
+- **Conversational inbound.** Account-aware chat or AI agents that recognize target-account visitors and route them to the right salesperson.
+- **Community and event marketing.** Field events, executive dinners, customer councils, especially for the top-tier accounts.
+
+No ABM program runs all of these at once. Mature programs start with display, LinkedIn, and web personalization, then add BDR outbound, then layer in direct mail and events for top tiers.
+
+## ABM vs related terms
+
+**ABM vs demand gen.** Demand gen targets volume (ICP-qualified leads); ABM targets value (named high-ACV accounts). Most B2B orgs run both for different revenue segments.
+
+**ABM vs MQL-driven marketing.** MQL-driven measures individuals; ABM measures accounts. An MQL-driven program can be converted to ABM by changing the unit of measurement, aligning sales-marketing on account lists, and instrumenting account-level signals. The tooling change is easier than the org change.
+
+**ABM vs account-based experience (ABX).** ABX is ABM extended into the post-sale customer lifecycle, expansion, cross-sell, advocacy. Same account-centric thinking; wider scope across the customer journey.
+
+**ABM vs revenue marketing.** Revenue marketing is a broader term that covers any marketing organization measured on pipeline and revenue rather than lead count. ABM is one strategy under the revenue marketing umbrella.
+
+## Common ABM mistakes
+
+The pattern failures we see most often when helping teams stand up programs.
+
+**ICP drift.** The target account list expands to 5,000 accounts because sales wants more, marketing does not push back, and suddenly "ABM" is identical to broad demand gen with extra dashboards. A tiered, finite list is the thing.
+
+**Fit without intent.** Targeting accounts that fit your ICP but show no intent. Good-fit cold accounts are not a near-term pipeline source. Warm accounts with weaker fit usually outpull them.
+
+**Measuring the wrong outcomes.** Reporting MQL count and lead conversion on an ABM program is a tell that the org has not actually made the shift. Account engagement, pipeline per account, and win rate by tier are the metrics that match the strategy.
+
+**Treating every account the same.** No tiering means no resource allocation. Top accounts deserve one-to-one effort. Long-tail accounts get one-to-many automation. The middle is where the judgment lives.
+
+**Buying a platform before aligning the org.** The platform is a force multiplier for alignment. If sales and marketing disagree on which accounts matter, platform purchases do not fix that, they just get more expensive about it.
+
+**Running the program without account-level attribution.** If you cannot answer "which named account did this campaign move?" you cannot iterate. Account-level attribution is non-negotiable.
+
+## Measuring ABM
+
+The KPIs that matter, in rough order of importance.
+
+- **Pipeline per account** (leading indicator of revenue)
+- **Account engagement score**, weighted activity across ads, site visits, content, outbound (leading indicator of pipeline)
+- **Pipeline velocity**, time from first engaged activity to closed-won. Our reference customer [Ketch](https://ketch.com/) reported a 4.2× lift in pipeline velocity after consolidating onto Abmatic.
+- **Win rate by tier**, the true test of whether your tier assignments match actual buying propensity
+- **ACV lift** on ABM-sourced deals versus non-ABM
+- **Cost per pipeline dollar** (replaces cost per lead)
+
+Metrics to stop running on an ABM program: MQL count, lead-to-MQL conversion, cost per lead. They measure something real, but not ABM.
+
+## Tools used in ABM
+
+The typical ABM stack has four layers. Some platforms cover one; a few cover all four.
+
+**Signal layer.** Intent data, firmographic enrichment, technographic enrichment. [Bombora](https://bombora.com/), TechTarget, G2 Buyer Intent, ZoomInfo. Full-stack platforms like [Abmatic](https://abmatic.ai/) ingest multiple signal sources into a unified account score.
+
+**Activation layer.** Account-based display and LinkedIn ads, personalization, content orchestration. [Demandbase](https://www.demandbase.com/), [6sense](https://6sense.com/), Abmatic, [Mutiny](https://mutiny.com/) (personalization only).
+
+**Conversation layer.** Live chat, conversational AI, SDR handoff. [Qualified](https://www.qualified.com/), [Drift](https://www.drift.com/), Abmatic's Agentic Chat module.
+
+**Attribution layer.** Pipeline-level attribution tied back to account engagement. [HockeyStack](https://hockeystack.com/), [Dreamdata](https://dreamdata.io/), Abmatic's Attribution Platform.
+
+Most teams start with a 3 or 4 tool stack and consolidate over 12 to 18 months as they learn which layers actually matter for their motion. The direction of the market in 2026 is consolidation: full-stack platforms that cover signal, activation, conversation, and attribution in one contract.
+
+## FAQ
+
+<Schema type="FAQPage" data={{
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What's the difference between ABM and lead gen?",
+      acceptedAnswer: { "@type": "Answer", text: "Lead gen targets volume at the individual lead level and measures MQLs and cost per lead. ABM targets a defined list of high-value accounts and measures pipeline, engagement, and win rate at the account level. Both can coexist in the same company, typically with lead gen handling SMB and high-volume segments and ABM handling enterprise and named accounts." }
+    },
+    {
+      "@type": "Question",
+      name: "Is ABM only for enterprise?",
+      acceptedAnswer: { "@type": "Answer", text: "No. ABM started in the enterprise segment because the economics of one-to-one treatment require high ACV, but one-to-few and one-to-many ABM motions work well in mid-market, and programmatic ABM is increasingly deployed at the lower end of mid-market. The threshold is not company size, it is ACV per account. If your average customer is worth $25,000 a year or more, some form of ABM usually justifies itself." }
+    },
+    {
+      "@type": "Question",
+      name: "How long does it take to see ABM results?",
+      acceptedAnswer: { "@type": "Answer", text: "Leading indicators (account engagement lift, in-market account identification) show up within 30 to 60 days of a well-instrumented program. Lagging indicators (pipeline, win rate, velocity) typically take 90 to 180 days, because the sales cycles need to complete. Teams that expect pipeline numbers in the first 60 days usually draw the wrong conclusions. Our reference customer Ketch reported 4.2× pipeline velocity within a quarter of consolidating onto a unified platform, which is faster than average but not unrealistic for mid-market." }
+    },
+    {
+      "@type": "Question",
+      name: "What's the ideal target account count?",
+      acceptedAnswer: { "@type": "Answer", text: "It depends on tier. One-to-one programs typically run 5 to 30 accounts. One-to-few programs run 100 to 500 accounts organized into 10 to 20 clusters. One-to-many programs run 1,000 to 5,000 accounts. The more important number than total count is the ratio of account list to sales capacity, if every account on your list does not have a plausible path to a named salesperson handling it, the list is too big for your current team." }
+    },
+    {
+      "@type": "Question",
+      name: "What does ABM actually cost?",
+      acceptedAnswer: { "@type": "Answer", text: "ABM program costs vary enormously by tier and tool stack. A one-to-many programmatic ABM program can be stood up for $30,000 to $75,000 in annual software plus modest ad spend. A full enterprise one-to-one program with named-account display, custom content, and dedicated BDR alignment typically runs into six figures in software plus meaningful ad and content spend. Full-stack platforms consolidate several contracts into one, often reducing total cost relative to assembling a 4 or 5 tool stack." }
+    },
+    {
+      "@type": "Question",
+      name: "How is ABM different in 2026 vs 2020?",
+      acceptedAnswer: { "@type": "Answer", text: "Three changes matter most. First, intent data has become table stakes, running an ABM program without signals now is unusual. Second, personalization has moved from manual variant-building to AI-generated, identity-aware experiences. Third, and most importantly, agentic execution means a single platform with autonomous AI agents can run the orchestration that used to require a dedicated RevOps team. The best 2026 programs deploy in hours to days rather than the multi-quarter rollouts that defined 2018 to 2022." }
+    },
+    {
+      "@type": "Question",
+      name: "Do I need an ABM platform to do ABM?",
+      acceptedAnswer: { "@type": "Answer", text: "Technically no. You can run a basic ABM program with a good CRM, a tight named-account list, LinkedIn ads, and disciplined sales-marketing alignment. In practice, once your program has more than 100 accounts or you need account-level reporting across channels, a platform usually earns its cost within a quarter. The choice is not whether to use tools, it is whether to assemble them yourself or buy a platform that integrates them." }
+    },
+    {
+      "@type": "Question",
+      name: "How does agentic ABM differ from traditional ABM?",
+      acceptedAnswer: { "@type": "Answer", text: "Traditional ABM has humans running each step of the five-job workflow: list building, intent triage, campaign launch, personalization, measurement. Agentic ABM has autonomous AI agents running the triage, campaign execution, budget adjustment, and ongoing optimization inside guardrails set by the human team. The human sets goals and reviews outcomes rather than supervising each decision. Cycle time compresses from days or weeks to hours. Abmatic's Clara is an example of this pattern running in production today." }
+    }
+  ]
+}} />
+
+**What's the difference between ABM and lead gen?**
+Lead gen targets volume at the individual lead level. ABM targets a defined list of high-value accounts and measures pipeline, engagement, and win rate at the account level. Both can coexist in the same company, typically with lead gen handling SMB and high-volume segments and ABM handling enterprise and named accounts.
+
+**Is ABM only for enterprise?**
+No. One-to-one programs are enterprise-weighted, but one-to-few and one-to-many motions work in mid-market. The threshold is ACV per account. If your average customer is worth $25,000 a year or more, some form of ABM usually justifies itself.
+
+**How long does it take to see ABM results?**
+Leading indicators show up within 30 to 60 days. Lagging indicators (pipeline, win rate, velocity) typically take 90 to 180 days. Our reference customer Ketch reported 4.2× pipeline velocity within a quarter of consolidating onto a unified platform.
+
+**What's the ideal target account count?**
+One-to-one programs run 5 to 30 accounts. One-to-few programs run 100 to 500 accounts organized into 10 to 20 clusters. One-to-many programs run 1,000 to 5,000 accounts.
+
+**What does ABM actually cost?**
+A one-to-many programmatic ABM program can be stood up for $30,000 to $75,000 in annual software plus modest ad spend. A full enterprise one-to-one program typically runs into six figures in software plus meaningful ad and content spend.
+
+**How is ABM different in 2026 vs 2020?**
+Intent data is now table stakes. Personalization has moved to AI-generated, identity-aware experiences. Agentic execution lets a single platform run the orchestration that used to require a dedicated RevOps team, and deployments measure in hours rather than quarters.
+
+**Do I need an ABM platform to do ABM?**
+Technically no. In practice, once your program has more than 100 accounts or you need account-level reporting across channels, a platform usually earns its cost within a quarter.
+
+**How does agentic ABM differ from traditional ABM?**
+Traditional ABM has humans running each step of the five-job workflow. Agentic ABM has autonomous AI agents running triage, campaign execution, and optimization inside guardrails set by the human team. The human sets goals and reviews outcomes rather than supervising each decision.
+
+## See agentic ABM running
+
+The fastest way to understand the 2026 shift is to see it. Abmatic runs the five ABM jobs agentically inside a single platform, with deployments measured in hours rather than the multi-quarter implementations that defined the previous decade. Our reference customer Ketch reported a 4.2× lift in pipeline velocity within a quarter of consolidating onto Abmatic.
+
+<CTAInline
+  primary={{ label: "See Abmatic's agentic ABM — 30 min demo", href: "https://abmatic.ai/demo" }}
+  secondary={{ label: "Read what is intent data", href: "/glossary/intent-data/" }}
+/>
+
+<RelatedArticles currentSlug="account-based-marketing" />
+
+### More related reading
+
+- [What is intent data?](/glossary/intent-data/)
+- [What is agentic marketing?](/glossary/agentic-marketing/)
+- [Best 6sense Alternatives for 2026](/alternatives-to-6sense/)
+- [Mutiny Alternatives for 2026](/alternatives-to/mutiny/)
+- [Clearbit Alternatives for 2026](/alternatives-to/clearbit/)
+
+<Schema type="Article" data={{
+  headline: "What Is Account-Based Marketing (ABM)? A 2026 Definition + Playbook Starter",
+  datePublished: "2026-04-22",
+  dateModified: "2026-04-22",
+  author: { "@type": "Organization", name: "Abmatic AI" },
+  publisher: { "@type": "Organization", name: "Abmatic AI", logo: { "@type": "ImageObject", url: "https://learn.abmatic.ai/brand/logo-horizontal.png" } },
+  mainEntityOfPage: "https://learn.abmatic.ai/glossary/account-based-marketing/",
+  description: "Account-based marketing treats the account as the unit of revenue. Definition, the three tiers, the 5 jobs, and the 2026 shift to agentic execution."
+}} />

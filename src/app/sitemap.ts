@@ -16,9 +16,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/glossary/`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${base}/learn/`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${base}/alternatives-to-6sense/`, lastModified: now, changeFrequency: "monthly", priority: 0.95 },
+    { url: `${base}/alternatives-to/mutiny/`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/alternatives-to/clearbit/`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/glossary/agentic-marketing/`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/glossary/intent-data/`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
-    { url: `${base}/glossary/account-based-marketing/`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
+    { url: `${base}/glossary/intent-data/`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/glossary/account-based-marketing/`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/best-abm-platforms-2026/`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
   ];
 

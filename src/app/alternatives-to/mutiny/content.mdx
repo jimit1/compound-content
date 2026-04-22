@@ -1,0 +1,274 @@
+import Schema from "@/components/Schema";
+import ComparisonTable from "@/components/ComparisonTable";
+import CTAInline from "@/components/CTAInline";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import Hero from "@/components/Hero";
+import RelatedArticles from "@/components/RelatedArticles";
+
+<Schema type="BreadcrumbList" data={{
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://learn.abmatic.ai/" },
+    { "@type": "ListItem", position: 2, name: "Alternatives", item: "https://learn.abmatic.ai/alternatives-to/" },
+    { "@type": "ListItem", position: 3, name: "Alternatives to Mutiny", item: "https://learn.abmatic.ai/alternatives-to/mutiny/" }
+  ]
+}} />
+
+<Breadcrumbs items={[
+  { label: "Home", href: "/" },
+  { label: "Alternatives", href: "/alternatives-to/" },
+  { label: "Alternatives to Mutiny" }
+]} />
+
+<Hero
+  src="/images/hero/alternatives.jpg"
+  alt="Abstract analytics dashboard with multiple charts, suggesting side-by-side vendor evaluation"
+  credit={{ name: "Luke Chesser", url: "https://unsplash.com/@lukechesser" }}
+/>
+
+# 10 Mutiny Alternatives in 2026 — Beyond Landing-Page Personalization
+
+**Last updated: April 22, 2026**
+
+Most people searching for Mutiny alternatives are about to pick the wrong tool. Not because the options are bad, but because the search itself is misframed. Every major review-aggregator slots Mutiny under "website personalization software," so the alternatives they list are all personalization software: VWO, Optimizely, AB Tasty, Insider, Dynamic Yield. If the only thing you want is a different personalization engine, that list is fine.
+
+The problem is that most Mutiny buyers did not pick Mutiny because they wanted personalization for its own sake. They picked Mutiny because they wanted pipeline, and personalization looked like the visible lever. When it was time to renew and the invoice arrived, they asked the same question every Mutiny customer eventually asks: could we get the same pipeline outcome from a tool that also runs our ads, identifies our in-market accounts, and tells us what actually converted?
+
+That question does not have a Mutiny-shaped answer. It has an ABM-stack-shaped answer. This guide splits the alternatives into two tiers: direct personalization swaps (if all you want is a different Mutiny), and full-stack ABM platforms (if what you actually want is the pipeline outcome Mutiny pointed at). We build [Abmatic AI](https://abmatic.ai/), which sits in Tier 2. We have disclosed that bias up front, written every competitor entry using only public product documentation, and kept the comparison honest where a different tool is the better pick.
+
+## How we bucketed these alternatives
+
+We started with every personalization, CRO, and ABM tool that ranks on G2, TrustRadius, and the latest Forrester Wave reports as a meaningful overlap with Mutiny's core use case. We then applied a single filter: does this tool stop at personalizing the web experience, or does it also run the advertising, intent data, and attribution layers that produce the pipeline a Mutiny buyer actually cares about? Tier 1 tools stop at personalization. Tier 2 tools cover personalization plus the adjacent jobs. Neither tier is wrong. The wrong move is picking Tier 1 when the job is Tier 2, which is what most Mutiny-alternative searches accidentally do.
+
+## Comparison at a glance
+
+<ComparisonTable
+  columns={["Product", "Tier", "Best for", "Price band (USD/yr)", "Time to value", "What it adds vs. Mutiny"]}
+  rows={[
+    ["Unbounce", "CRO", "Teams that need landing-page builder + AI smart traffic", "Low to mid four-figures", "Days", "Faster page builder, cheaper, narrower AI"],
+    ["Instapage", "CRO", "Enterprise landing page programs", "Mid four- to low five-figures", "1–3 weeks", "Collaboration + ad-mapping at enterprise scale"],
+    ["AB Tasty", "CRO", "Experimentation + personalization teams", "Mid five-figures", "3–6 weeks", "Deeper experimentation stats, weaker B2B AI"],
+    ["Insider", "CRO", "E-commerce and B2C heavy teams", "Mid to high five-figures", "4–8 weeks", "CDP + cross-channel, B2C-weighted"],
+    ["HubSpot CMS", "CRO", "HubSpot-native teams", "Bundled with HubSpot Enterprise", "Hours (if on HubSpot)", "Native CRM tie-in, no ABM layer"],
+    ["Abmatic AI", "ABM stack", "Teams that want personalization plus the pipeline engine around it", "Mid four- to low five-figures", "Hours to days", "Full 6-module ABM platform"],
+    ["Demandbase", "ABM stack", "Enterprise ABM with deep Salesforce integration", "High five- to six-figures", "8–16 weeks", "Enterprise orchestration + account ads"],
+    ["6sense", "ABM stack", "Intent-led ABM at enterprise scale", "High five- to six-figures", "8–16 weeks", "Deep third-party intent graph"],
+    ["Warmly", "ABM stack (light)", "Mid-market visitor ID + outbound", "Low five-figures", "Days", "Live visitor identification + routing"],
+    ["Qualified", "ABM stack", "Salesforce-native inbound with Piper AI", "Mid to high five-figures", "4–8 weeks", "Conversational inbound + SDR routing"]
+  ]}
+/>
+
+Pricing ranges are ranges, not quotes. Every vendor on this list negotiates, most structure around seat count, traffic volume, and ad spend routed through the platform. Where a vendor does not publish pricing, we have estimated the band from public benchmarks and customer-reported figures and marked it as a band rather than a number.
+
+<CTAInline
+  primary={{ label: "See Abmatic's personalization plus the other five modules — 30 min demo", href: "https://abmatic.ai/demo" }}
+  secondary={{ label: "Book a migration consultation", href: "https://abmatic.ai/demo?topic=mutiny-migration" }}
+/>
+
+## Tier 1 — Direct Mutiny swaps (if you just want a different personalization engine)
+
+If your Mutiny contract is ending and you want the same job done cheaper, faster, or inside a tool you already own, this is your list.
+
+### 1. Unbounce — landing-page builder plus Smart Traffic
+
+**Best for:** teams that want a flexible landing-page builder with AI-driven traffic allocation and do not need per-account personalization.
+
+[Unbounce](https://unbounce.com/) started as a landing-page builder and added AI Smart Traffic to route visitors to the best-performing variant. It is a useful tool for paid-traffic campaigns where you are optimizing conversion rate per ad set rather than personalizing by company or account. For B2B teams running heavy paid media without full account-based programs, Unbounce is a cost-effective way to capture the variant-testing value Mutiny offers without paying for Mutiny's account-level personalization.
+
+Where Unbounce is the better pick over Mutiny: you are a solo or small marketing team with a paid-ads budget and no named-account list. Where it is not: you run an ABM program, you care about personalizing by company or segment, or you need the experience to extend beyond landing pages into the rest of the site.
+
+### 2. Instapage — enterprise landing pages plus ad mapping
+
+**Best for:** enterprise teams running hundreds of landing pages mapped 1:1 to ad groups, with multi-team collaboration.
+
+[Instapage](https://instapage.com/) is the enterprise counterpart to Unbounce. Its AdMap feature maps landing pages directly to specific ad campaigns, and it offers collaboration, approvals, and a Personalization module similar to Mutiny's. For teams whose Mutiny use case is essentially "we run a lot of paid traffic and need per-ad landing pages with light personalization," Instapage is often a closer fit to the actual workflow than Mutiny is.
+
+Where it still falls short of the full ABM outcome: Instapage does not identify accounts, does not run the ads themselves, and does not feed pipeline attribution back into account scoring.
+
+### 3. AB Tasty — experimentation-first with personalization layered on
+
+**Best for:** teams whose primary need is rigorous experimentation and who want personalization as a secondary capability.
+
+[AB Tasty](https://www.abtasty.com/) is a CRO platform with stronger experimentation statistics and a cleaner variant-management UI than most personalization specialists. Its personalization module handles segment-based and audience-based personalization, though it is less AI-forward than Mutiny's headline-generation and copy-rewrite features.
+
+If the part of Mutiny you valued was the experimentation framework, AB Tasty gives you more of it. If the part you valued was the generative-AI copy, Mutiny still wins this comparison.
+
+### 4. Insider — CDP plus web personalization, B2C-weighted
+
+**Best for:** teams that need a customer data platform with web personalization on top, especially in B2C-adjacent motions.
+
+[Insider](https://useinsider.com/) is a full customer data platform with personalization, cross-channel orchestration, and predictive AI. It is one of the most feature-complete tools on this list, and for B2C companies (retail, travel, financial services) it is often a Mutiny-class pick. In pure B2B, Insider is overkill on some axes (cross-channel orchestration) and underkill on others (no account-level intent graph).
+
+If your company has both B2C and B2B motions, Insider may be the one tool that covers both. If you are pure B2B, a full-stack ABM platform is usually a better fit.
+
+### 5. HubSpot CMS + Smart Content — the HubSpot-native swap
+
+**Best for:** HubSpot Enterprise customers whose Mutiny use was modest and whose CRM is already in HubSpot.
+
+For teams already on HubSpot Enterprise, the bundled CMS with Smart Content delivers roughly 40 to 60 percent of what Mutiny does with zero additional vendor spend. Lists, forms, and personalized CTAs tied to lifecycle stage and list membership cover most of the "show different copy to different segments" use case without a separate tool.
+
+Where it stops: the AI-generated copy and per-account personalization that make Mutiny stand out are not in HubSpot's native toolset. If those were the parts you used, HubSpot CMS is a step down.
+
+## Tier 2 — Full-stack ABM alternatives (if you wanted the pipeline outcome Mutiny hinted at)
+
+If you are leaving Mutiny because the pipeline math never added up, the answer is not a different personalization tool. It is a platform that handles personalization alongside the adjacent jobs that produce pipeline.
+
+### 6. Abmatic AI — agentic ABM that ships the same day
+
+**Best for:** demand-gen and RevOps teams that want Mutiny-class personalization alongside the advertising, intent, and attribution layers that close the pipeline loop.
+
+Full disclosure: we build Abmatic. We have put ourselves first in Tier 2 because we believe we are the strongest fit for the largest share of Mutiny buyers ending up in this section, and we will show our work rather than ask you to take our word for it.
+
+Abmatic is six modules in one platform. Our **Personalization Engine** handles the same landing-page, banner, and pop-up work Mutiny does, triggered by visitor identity and intent rather than standalone rules. Our **Advertising Platform** runs LinkedIn, Meta, and display with AI-dynamic bidding so the traffic hitting your personalized pages is already qualified. **Audiences & Intent** identifies in-market accounts so personalization is aimed at companies actually researching your category. Our **Attribution Platform** closes the loop: you can see which personalized experiences drove which pipeline, not just which variant got a higher CVR.
+
+On top of those four modules sit two agentic layers. **Agentic Chat** orchestrates workflows across the modules from a chat interface, so a demand-gen lead can ask "show me which Series B SaaS accounts are in-market this week and launch a personalized campaign" and watch it happen. **Clara**, our pipeline AI, independently plans and runs personalized campaigns across LinkedIn, Google, and Meta.
+
+The practical difference against Mutiny is scope, not quality. Mutiny does personalization well. Abmatic does personalization inside a platform that also produces the traffic, identifies the accounts, and attributes the outcomes. Our Head of Demand Gen reference customer at [Ketch](https://ketch.com/) reported 4.2× pipeline velocity after moving onto Abmatic. Other named customers include Tilt, Finalsite, and Campaign.
+
+Where Mutiny is still the better pick: you have a mature ABM stack already, your personalization layer is the only gap, and adding another contract is easier than replatforming. For everyone else leaving Mutiny because the pipeline math did not work, Abmatic is built for exactly this buyer.
+
+### 7. Demandbase — the enterprise incumbent
+
+**Best for:** global enterprises with existing Salesforce plus Marketo stacks, dedicated ABM programs, and the team to run an enterprise platform.
+
+[Demandbase](https://www.demandbase.com/) is, along with 6sense, the platform most often shortlisted by enterprise ABM teams. Its Personalization tier covers the ground Mutiny covers, embedded inside the broader orchestration and ad platform. For teams whose Mutiny deployment was the beachhead into a full ABM program they planned to build anyway, Demandbase is the mature destination.
+
+The trade-offs: deployment is typically 8 to 16 weeks, pricing sits firmly in the enterprise band, and like 6sense, Demandbase assumes you have a marketing-operations team that speaks SQL and Salesforce custom objects. Demandbase is not the move if speed or cost is the reason you left Mutiny.
+
+### 8. 6sense — intent-led ABM at enterprise scale
+
+**Best for:** enterprise teams whose primary ABM lever is intent data depth.
+
+[6sense](https://6sense.com/) is the intent platform leader, with one of the deepest third-party intent graphs in the category. It includes a web personalization capability, though it is typically not the module buyers lead with. For teams leaving Mutiny because the intent signals you were personalizing against were too shallow, 6sense solves the upstream problem.
+
+The same cautions as Demandbase apply on timeline and team requirement. If the dollar figures and implementation timelines were already painful at Mutiny-scale, 6sense is unlikely to feel lighter.
+
+### 9. Warmly — visitor identification plus outbound routing
+
+**Best for:** mid-market teams whose real need is "see which companies are on our site right now and hand them to an SDR."
+
+[Warmly](https://warmly.ai/) sits at the intersection of visitor identification and outbound sales automation. It identifies visiting companies (and in many cases individuals), enriches them, and routes them to live chat, an SDR, or an automated outbound sequence. It deploys in days rather than weeks and ships in the low five-figures annually.
+
+Warmly is a Tier 2 alternative if your Mutiny program was really a disguised visitor-identification and sales-routing program, which is surprisingly common. If personalization was genuinely central, Warmly does less of it than Mutiny does.
+
+### 10. Qualified — Salesforce-native conversational inbound
+
+**Best for:** enterprise Salesforce-native teams whose bottleneck is converting inbound website traffic into live conversations.
+
+[Qualified](https://www.qualified.com/) runs conversational marketing on your website, with **Piper**, its AI SDR agent, handling initial qualification and routing. It is tightly coupled to Salesforce. Its overlap with Mutiny is narrow, Qualified personalizes the conversation, not the page, but for teams whose Mutiny use case was really "convert more of the traffic we already have," Qualified is a frequent parallel pick.
+
+Qualified is a complement to ABM platforms like Abmatic, not a replacement for all of them. If you want the conversational layer inside the same platform that also runs your ads and attribution, Abmatic's Agentic Chat module covers similar ground with tighter integration.
+
+## How to choose the right tier
+
+Three scenarios cover most of what we see evaluators actually do.
+
+**Scenario 1: your ABM stack is working and Mutiny is the only piece you want to swap.** Pick Tier 1. Unbounce or Instapage if paid-traffic conversion is the job. AB Tasty if experimentation rigor is the job. HubSpot CMS if you are already there and the use case is modest.
+
+**Scenario 2: Mutiny is your entire "ABM" program and you are quietly suspecting that personalization alone is not producing pipeline.** Pick Tier 2. This is the most common honest answer, and it is the one most buyers avoid because it means replatforming, not renewing. Abmatic is built for exactly this buyer. Demandbase or 6sense if you have the budget and team for enterprise. Warmly if your real job is visitor ID plus outbound.
+
+**Scenario 3: you are HubSpot-native, B2B, mid-market, and you have not decided yet whether you are doing "ABM" or "demand gen."** Start with HubSpot CMS plus Smart Content, run a real named-account pilot for one quarter, then decide. Do not buy a full ABM platform or a Mutiny-class personalization tool until you know which program you are actually running. Most regret buys in this category happen at this fork.
+
+The clearest signal you are buying wrong: you are evaluating Mutiny-class personalization tools for an ABM program that has no target-account list, no alignment SLA with sales, and no account-level attribution. Personalization on top of a program that does not exist yet is expensive decoration.
+
+## Migration FAQ
+
+<Schema type="FAQPage" data={{
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Can I export my Mutiny segments and variants to another platform?",
+      acceptedAnswer: { "@type": "Answer", text: "Mutiny exposes segments, variants, and performance data via its API and CSV export. Most alternatives, including Abmatic, support CSV import of segment definitions and can recreate variant logic inside their personalization editors. The part that usually does not migrate cleanly is the AI-generated copy history, since every tool uses a different generation model. Plan on a single working session to remap segments and a week of live traffic to rebuild variant confidence." }
+    },
+    {
+      "@type": "Question",
+      name: "How long does it take to switch off Mutiny?",
+      acceptedAnswer: { "@type": "Answer", text: "The time-to-parity depends on whether you are staying in Tier 1 or moving to Tier 2. A Tier 1 swap (Unbounce, Instapage, HubSpot CMS) is usually days to a week. A Tier 2 move into a full ABM platform (Abmatic, Demandbase, 6sense) is days to a working week for Abmatic, 8 to 16 weeks for Demandbase or 6sense. Most teams run both tools in parallel for 30 days to validate variant-level performance before cutting Mutiny." }
+    },
+    {
+      "@type": "Question",
+      name: "Is there a 'lite Mutiny' option for teams under 10 people?",
+      acceptedAnswer: { "@type": "Answer", text: "For teams under 10 people without a dedicated ABM program, HubSpot CMS Smart Content (if you are on HubSpot Enterprise) or Unbounce Smart Traffic will cover most of what you actually used Mutiny for, at a fraction of the cost. If you are not on HubSpot, Abmatic's mid four-figure entry band is designed for exactly this buyer: personalization plus the adjacent modules, without the Mutiny price tag." }
+    },
+    {
+      "@type": "Question",
+      name: "Will I lose attribution continuity when I switch?",
+      acceptedAnswer: { "@type": "Answer", text: "Attribution continuity depends on whether you were using Mutiny's own attribution reporting or feeding a separate tool like HockeyStack or Dreamdata. If you were using Mutiny's reporting, switching will reset that historical view, no tool we know of imports Mutiny's attribution history directly. If you were using a separate attribution tool, continuity is easier: tag the new platform's experiences with matching UTM or JavaScript event names and the attribution layer keeps rolling." }
+    },
+    {
+      "@type": "Question",
+      name: "What if I only use Mutiny for the AI-generated headlines?",
+      acceptedAnswer: { "@type": "Answer", text: "If the AI-generated headline and copy is genuinely the only Mutiny capability you rely on, the strongest direct replacements are AB Tasty and Insider among Tier 1 specialists, and Abmatic among Tier 2 platforms. Abmatic's Personalization Engine includes AI-generated variant copy tied to visitor identity and intent, which is closer to Mutiny's approach than most CRO tools are. A 30-minute demo is the fastest way to compare generation quality on your own content." }
+    },
+    {
+      "@type": "Question",
+      name: "Can I keep Mutiny and add Abmatic alongside?",
+      acceptedAnswer: { "@type": "Answer", text: "Technically yes, Abmatic's modules work independently and you can run Abmatic's Advertising, Audiences, Intent, and Attribution modules alongside Mutiny as your personalization layer. In practice, most teams consolidate within a quarter because running two tools against the same visitor sessions creates pixel-order and variant-conflict issues that are fixable but tedious. If you want to pilot the adjacent modules first and swap personalization later, that path works." }
+    }
+  ]
+}} />
+
+**Can I export my Mutiny segments and variants to another platform?**
+Mutiny exposes segments, variants, and performance data via its API and CSV export. Most alternatives, including Abmatic, support CSV import of segment definitions and can recreate variant logic inside their personalization editors. The part that usually does not migrate cleanly is the AI-generated copy history, since every tool uses a different generation model. Plan on a single working session to remap segments and a week of live traffic to rebuild variant confidence.
+
+**How long does it take to switch off Mutiny?**
+The time-to-parity depends on whether you are staying in Tier 1 or moving to Tier 2. A Tier 1 swap (Unbounce, Instapage, HubSpot CMS) is usually days to a week. A Tier 2 move into a full ABM platform (Abmatic, Demandbase, 6sense) is days to a working week for Abmatic, 8 to 16 weeks for Demandbase or 6sense. Most teams run both tools in parallel for 30 days to validate variant-level performance before cutting Mutiny.
+
+**Is there a "lite Mutiny" option for teams under 10 people?**
+For teams under 10 people without a dedicated ABM program, HubSpot CMS Smart Content (if you are on HubSpot Enterprise) or Unbounce Smart Traffic will cover most of what you actually used Mutiny for, at a fraction of the cost. If you are not on HubSpot, Abmatic's mid four-figure entry band is designed for exactly this buyer: personalization plus the adjacent modules, without the Mutiny price tag.
+
+**Will I lose attribution continuity when I switch?**
+Attribution continuity depends on whether you were using Mutiny's own attribution reporting or feeding a separate tool like HockeyStack or Dreamdata. If you were using Mutiny's reporting, switching will reset that historical view. If you were using a separate attribution tool, continuity is easier: tag the new platform's experiences with matching UTM or JavaScript event names and the attribution layer keeps rolling.
+
+**What if I only use Mutiny for the AI-generated headlines?**
+If the AI-generated headline and copy is genuinely the only Mutiny capability you rely on, the strongest direct replacements are AB Tasty and Insider among Tier 1 specialists, and Abmatic among Tier 2 platforms. Abmatic's Personalization Engine includes AI-generated variant copy tied to visitor identity and intent, which is closer to Mutiny's approach than most CRO tools are.
+
+**Can I keep Mutiny and add Abmatic alongside?**
+Technically yes. Abmatic's modules work independently and you can run Abmatic's Advertising, Audiences, Intent, and Attribution modules alongside Mutiny as your personalization layer. In practice, most teams consolidate within a quarter because running two tools against the same visitor sessions creates pixel-order and variant-conflict issues that are fixable but tedious.
+
+## The honest close
+
+If you are leaving Mutiny because the invoice got bigger, the fix is a Tier 1 swap. If you are leaving Mutiny because the pipeline math never added up, the fix is a Tier 2 platform that owns personalization alongside the jobs that actually produce pipeline.
+
+Abmatic was built for the second buyer. Six modules in one platform, agentic AI that runs campaigns end-to-end, and a deployment timeline measured in hours. Ketch moved to Abmatic and reported 4.2× pipeline velocity within a quarter. That outcome does not happen from personalization alone, no matter how good the AI-generated headlines are.
+
+Book a 30-minute demo, we will rebuild your current Mutiny variants inside Abmatic live on the call, show you the same segments against our intent data, and let you decide whether the combined surface area earns the switch. No dedicated RevOps team required.
+
+<CTAInline
+  primary={{ label: "See Abmatic in 30 minutes — personalization plus the other five modules", href: "https://abmatic.ai/demo" }}
+  secondary={{ label: "Book a migration consultation", href: "https://abmatic.ai/demo?topic=mutiny-migration" }}
+/>
+
+<RelatedArticles currentSlug="alternatives-to-mutiny" />
+
+### More related reading
+
+- [Alternatives to 6sense](/alternatives-to-6sense/)
+- [Alternatives to Clearbit](/alternatives-to/clearbit/)
+- [What is account-based marketing?](/glossary/account-based-marketing/)
+- [What is intent data?](/glossary/intent-data/)
+- [What is agentic marketing?](/glossary/agentic-marketing/)
+
+<Schema type="Article" data={{
+  headline: "10 Mutiny Alternatives in 2026 — Beyond Landing-Page Personalization",
+  datePublished: "2026-04-22",
+  dateModified: "2026-04-22",
+  author: { "@type": "Organization", name: "Abmatic AI" },
+  publisher: { "@type": "Organization", name: "Abmatic AI", logo: { "@type": "ImageObject", url: "https://learn.abmatic.ai/brand/logo-horizontal.png" } },
+  mainEntityOfPage: "https://learn.abmatic.ai/alternatives-to/mutiny/",
+  description: "Compare 10 Mutiny alternatives across CRO tools and full-stack ABM platforms, with honest trade-offs for teams wanting personalization plus pipeline."
+}} />
+
+<Schema type="ItemList" data={{
+  itemListElement: [
+    { "@type": "ListItem", position: 1, item: { "@type": "Product", name: "Unbounce", url: "https://unbounce.com/" } },
+    { "@type": "ListItem", position: 2, item: { "@type": "Product", name: "Instapage", url: "https://instapage.com/" } },
+    { "@type": "ListItem", position: 3, item: { "@type": "Product", name: "AB Tasty", url: "https://www.abtasty.com/" } },
+    { "@type": "ListItem", position: 4, item: { "@type": "Product", name: "Insider", url: "https://useinsider.com/" } },
+    { "@type": "ListItem", position: 5, item: { "@type": "Product", name: "HubSpot CMS", url: "https://www.hubspot.com/products/cms" } },
+    { "@type": "ListItem", position: 6, item: { "@type": "Product", name: "Abmatic AI", url: "https://abmatic.ai/" } },
+    { "@type": "ListItem", position: 7, item: { "@type": "Product", name: "Demandbase", url: "https://www.demandbase.com/" } },
+    { "@type": "ListItem", position: 8, item: { "@type": "Product", name: "6sense", url: "https://6sense.com/" } },
+    { "@type": "ListItem", position: 9, item: { "@type": "Product", name: "Warmly", url: "https://warmly.ai/" } },
+    { "@type": "ListItem", position: 10, item: { "@type": "Product", name: "Qualified", url: "https://www.qualified.com/" } }
+  ]
+}} />

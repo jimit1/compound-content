@@ -1,0 +1,286 @@
+import Schema from "@/components/Schema";
+import ComparisonTable from "@/components/ComparisonTable";
+import CTAInline from "@/components/CTAInline";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import Hero from "@/components/Hero";
+import RelatedArticles from "@/components/RelatedArticles";
+
+<Schema type="BreadcrumbList" data={{
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://learn.abmatic.ai/" },
+    { "@type": "ListItem", position: 2, name: "Alternatives", item: "https://learn.abmatic.ai/alternatives-to/" },
+    { "@type": "ListItem", position: 3, name: "Alternatives to Clearbit", item: "https://learn.abmatic.ai/alternatives-to/clearbit/" }
+  ]
+}} />
+
+<Breadcrumbs items={[
+  { label: "Home", href: "/" },
+  { label: "Alternatives", href: "/alternatives-to/" },
+  { label: "Alternatives to Clearbit" }
+]} />
+
+<Hero
+  src="/images/hero/best-abm.jpg"
+  alt="Person working at a laptop with a coffee cup, suggesting a buyer researching software alternatives"
+  credit={{ name: "Austin Distel", url: "https://unsplash.com/@austindistel" }}
+/>
+
+# 10 Clearbit Alternatives in 2026 — Replace Enrichment AND Reveal Personalization
+
+**Last updated: April 22, 2026**
+
+Clearbit did two jobs. One was **enrichment**: take an email or a company name and return a full firmographic, technographic, and contact profile. The other was **Reveal**: identify the company behind an anonymous website visitor and trigger a personalized page experience. Most teams used both without thinking of them as separate products, because the same contract covered them.
+
+Then HubSpot bought Clearbit and folded it into **Breeze Intelligence**. That did two things to the market simultaneously. If you are a HubSpot Enterprise customer, Breeze is fine, the enrichment side is largely preserved and the Reveal-equivalent is bundled into HubSpot's CMS personalization. If you are not a HubSpot customer, you cannot buy it at all. Clearbit's standalone API, which powered hundreds of non-HubSpot enrichment workflows, is gone.
+
+That is why the "Clearbit alternatives" search volume exploded in late 2025 and stayed there. Every other ranker for this query treats it as "enrichment alternatives only", which misses half of what Clearbit actually did. This guide covers both: enrichment replacements AND Reveal-equivalent personalization replacements, with honest notes on which tools rebundle both jobs and which only cover one.
+
+We build [Abmatic AI](https://abmatic.ai/), which is one of the few platforms that handles enrichment, visitor reveal, and personalized web activation inside a single contract. We have disclosed that bias up front, and we have written every alternative entry using public product documentation.
+
+## The Clearbit-to-Breeze reality check
+
+Before the alternatives, a grounded look at what the Breeze transition actually changed, so you know what you are replacing.
+
+**What Breeze Intelligence does today.** Company and contact enrichment on every HubSpot record, triggered automatically at form submit, import, or list build. Buying-intent signals surfaced inside HubSpot workflows. Reveal-equivalent identification of anonymous visitors, with the data routed into HubSpot's CMS Smart Content personalization. All of this is HubSpot-native.
+
+**What Breeze does not do.** It does not expose the legacy Clearbit standalone API. Non-HubSpot CRMs cannot call it. Salesforce-native RevOps teams cannot pipe Breeze data into Salesforce without HubSpot in the middle. Custom product enrichment (the "enrich on signup" API call pattern that hundreds of SaaS companies built on Clearbit) is not a first-class use case anymore.
+
+**The cost shift.** Public reports from customer interviews and community posts describe 30 to 60 percent price increases for equivalent seat and record counts during contract migration, with Breeze pricing tied to HubSpot tier rather than standalone volume. We have not independently verified these figures, they are self-reported, but the direction is consistent across sources.
+
+**The lock-in.** Once your enrichment layer is inside HubSpot, migrating away from HubSpot later is materially harder. That is not necessarily a reason to avoid Breeze, but it is a reason to decide consciously.
+
+## Comparison matrix at a glance
+
+<ComparisonTable
+  columns={["Product", "Does enrichment", "Does Reveal-equivalent", "HubSpot required", "Price band (USD/yr)", "Time to value"]}
+  rows={[
+    ["Abmatic AI", "Yes (native + partner)", "Yes (Personalization Engine)", "No", "Mid four- to low five-figures", "Hours to days"],
+    ["Apollo", "Yes (contact + company)", "No", "No", "Low to mid four-figures", "Hours"],
+    ["ZoomInfo", "Yes (gold standard)", "Partial (WebSights add-on)", "No", "High five-figures", "4–8 weeks"],
+    ["Cognism", "Yes (EU-strong)", "No", "No", "Mid four- to low five-figures", "1–2 weeks"],
+    ["Lusha", "Yes (lightweight)", "No", "No", "Low four-figures", "Hours"],
+    ["6sense", "Yes (inside ABM stack)", "Yes (inside ABM stack)", "No", "High five- to six-figures", "8–16 weeks"],
+    ["Warmly", "Yes (visitor-enriched)", "Yes", "No", "Low five-figures", "Days"],
+    ["RB2B", "Person-level only", "Yes (U.S. only)", "No", "Low four-figures", "Under an hour"],
+    ["Koala", "Yes (signal-adjacent)", "Partial", "No", "Low five-figures", "1–2 weeks"],
+    ["Clay", "Yes (orchestrated)", "No", "No", "Mid four- to low five-figures", "1–2 weeks"]
+  ]}
+/>
+
+Pricing ranges are ranges, not quotes. Many of these vendors structure around credit packs, seat count, or record volume.
+
+<CTAInline
+  primary={{ label: "See Abmatic rebundle enrichment + reveal in 30 minutes", href: "https://abmatic.ai/demo" }}
+  secondary={{ label: "Book a Clearbit-to-Abmatic migration walkthrough", href: "https://abmatic.ai/demo?topic=clearbit-migration" }}
+/>
+
+## The 10 alternatives
+
+### 1. Abmatic AI — rebundled enrichment, reveal, and activation
+
+**Best for:** teams leaving Clearbit who used both enrichment AND Reveal, and who do not want to be locked into HubSpot to keep them.
+
+Full disclosure: we build Abmatic. We have put ourselves first because the Clearbit-to-Breeze transition is the buyer profile we fit most cleanly: you had enrichment, you had Reveal, you are not on HubSpot (or you are but do not want to deepen the lock-in), and you would prefer one contract that covers both jobs plus the activation layer around them.
+
+Abmatic is six modules in one platform. **Audiences & Intent** handles the enrichment side, firmographic and technographic data on your target accounts, plus intent signals that tell you which of them are in-market today. **Personalization Engine** handles the Reveal side, identify the company visiting your site and trigger a personalized page, banner, or pop-up against them. Then we add four more modules that Clearbit never had: an **Advertising Platform** that activates identified accounts across LinkedIn, Meta, and display; an **Attribution Platform** that tells you which enriched accounts actually produced pipeline; **Agentic Chat**, an orchestration layer; and **Clara**, our pipeline AI that runs personalized cross-channel campaigns.
+
+Where Abmatic wins against Breeze: you do not have to be on HubSpot, our deployments are measured in hours rather than weeks, our pricing is in the mid four- to low five-figure band for equivalent scope, and the same contract covers the activation layer that Clearbit never touched. Our reference customer [Ketch](https://ketch.com/) reported 4.2× pipeline velocity after consolidating onto Abmatic, which is the kind of outcome that shows up when enrichment, reveal, and activation live in the same platform rather than three.
+
+Where Breeze is still the better pick: you are deeply HubSpot-native, enrichment inside HubSpot workflows is the whole job, and you would rather add to the HubSpot contract than introduce a second vendor.
+
+### 2. Apollo — high-volume contact enrichment
+
+**Best for:** sales-led teams whose Clearbit use case was mostly "enrich contacts for prospecting."
+
+[Apollo](https://www.apollo.io/) is the most common direct-enrichment replacement for sales-team Clearbit users. Its database of contact records with verified emails and direct dials is larger than Clearbit's was, its API is well-documented, and its pricing is materially cheaper at equivalent credit volume. For RevOps teams whose Clearbit workflow was "enrich a contact at MQL, enrich a company at opportunity," Apollo is a near-drop-in.
+
+Where it stops: Apollo does not have a Reveal equivalent. It will not identify anonymous website visitors. If that was half your Clearbit value, Apollo alone does not replace it, you will need to pair it with Warmly, RB2B, or a full-stack platform.
+
+### 3. ZoomInfo — the enrichment gold standard
+
+**Best for:** enterprise teams with the budget for the most complete contact and firmographic dataset in the category.
+
+[ZoomInfo](https://www.zoominfo.com/) is the enterprise default for contact enrichment and sales intelligence. Its data quality, coverage, and Salesforce integration are the benchmark the rest of the category measures against. Its **WebSights** add-on provides Reveal-equivalent visitor identification, though WebSights is priced separately and is lighter on personalization triggers than Clearbit Reveal was.
+
+Where ZoomInfo is the right pick: you are enterprise, your budget accommodates the five-to-six-figure annual commit, and Salesforce-native workflows are the center of your RevOps motion. Where it is not: mid-market teams where the budget does not fit, or teams who want the Reveal functionality tightly coupled with personalization and ad activation.
+
+### 4. Cognism — EU-strong enrichment with cadence
+
+**Best for:** EU-focused or GDPR-sensitive teams whose primary Clearbit use was European contact enrichment.
+
+[Cognism](https://www.cognism.com/) leans into European data coverage, GDPR-compliant contact verification, and an integrated sales cadence. For teams whose Clearbit data was weakest in Europe, which Clearbit legitimately was, Cognism is often a stronger direct replacement than Apollo. Its intent signals are largely resold Bombora, which Cognism's own content acknowledges; that is accurate context for evaluators who want original third-party data.
+
+Where Cognism is the better pick over Apollo: EU focus. Where it stops: no native Reveal equivalent.
+
+### 5. Lusha — lightweight contact-level enrichment
+
+**Best for:** small teams whose Clearbit use was a few hundred monthly contact enrichments, not a full data platform.
+
+[Lusha](https://www.lusha.com/) is the cheapest credible enrichment tool in the category. For teams where Clearbit was a per-rep Chrome extension for LinkedIn-to-phone-number lookups, Lusha is a direct swap at a small fraction of enterprise tool pricing. Its API and CRM integrations cover basic enrichment workflows.
+
+Lusha is not a platform replacement. If Clearbit was powering product signups, marketing automation enrichment, or Reveal, Lusha does not cover those jobs.
+
+### 6. 6sense — enrichment inside a full ABM stack
+
+**Best for:** enterprise teams whose Clearbit use was the beachhead into a full ABM program they planned to build anyway.
+
+[6sense](https://6sense.com/) includes company-level enrichment and visitor identification inside its broader intent platform. For teams who were using Clearbit as part of an ABM motion and are now rebuilding that motion from scratch, 6sense is one natural destination. The trade-offs are the same as any 6sense purchase: pricing sits in the high five- to six-figures, deployment is typically 8 to 16 weeks, and you need a RevOps team to run it.
+
+If "Clearbit plus real ABM" is where you were heading, 6sense is the enterprise answer and Abmatic is the faster, lighter answer for mid-market buyers.
+
+### 7. Warmly — visitor identification and outbound routing
+
+**Best for:** mid-market teams whose Clearbit Reveal usage was the job they actually cared about.
+
+[Warmly](https://warmly.ai/) is among the cleanest direct Reveal replacements on the market. It identifies visiting companies (often at person level), enriches them on the fly, and routes them to Slack, live chat, an SDR, or automated outbound. For teams whose Clearbit value was 70 percent Reveal and 30 percent API enrichment, Warmly covers most of the Reveal job and partners with contact-level enrichment tools for the rest.
+
+Where Warmly is the right pick: standalone Reveal use case, mid-market budget, deployment in days. Where it is not: you want the Reveal signal to trigger personalized web experiences AND run coordinated ad campaigns against the identified accounts, which is a three-tool stack with Warmly and a single-tool stack with Abmatic.
+
+### 8. RB2B — ultra-lightweight U.S. person-level reveal
+
+**Best for:** lean teams who want person-level U.S. visitor identification and nothing else.
+
+[RB2B](https://rb2b.com/) identifies U.S. visitors at the person level, enriches with LinkedIn profile data, and pushes to Slack or CRM. It is deliberately single-purpose, it does not enrich via API, does not personalize pages, does not run ads. For a two-person B2B marketing team that used Clearbit mainly to see "which individuals from our target accounts visited this week," RB2B is the fastest, cheapest entry.
+
+RB2B is a perfect complement to a full-stack platform, not a replacement for one. Many mid-market teams run RB2B plus Abmatic as a clean two-tool stack.
+
+### 9. Koala — signal-triage with enrichment adjacency
+
+**Best for:** product-led or mid-market sales teams whose Clearbit use was signal-adjacent.
+
+[Koala](https://getkoala.com/) is a weighted-signal engine for sales teams, with enrichment inside its own workflow. It ingests website, product-usage, and third-party intent signals, scores accounts, and delivers a ranked list of who to contact today. Its enrichment is not as deep as ZoomInfo's or Apollo's, but it is well-integrated with the signal layer a RevOps lead actually acts on.
+
+Koala is a partial Clearbit replacement: it covers the "enrich in context of a signal" use case well, but it is not a general-purpose enrichment API.
+
+### 10. Clay — RevOps-orchestrated enrichment
+
+**Best for:** RevOps teams who want programmatic control over enrichment workflows across multiple data sources.
+
+[Clay](https://www.clay.com/) is a spreadsheet-like interface for orchestrating enrichment from multiple vendors (including scraping and LLM-based research) against a target list. For teams who used Clearbit programmatically and want more flexibility in source mixing, Clay is the power-user's choice.
+
+Clay is not a Reveal replacement. It is not a visitor-identification tool. It is the RevOps workbench for enrichment, not the personalization engine.
+
+## How to choose the right Clearbit alternative
+
+Four scenarios cover almost every post-Breeze decision we see.
+
+**Scenario 1: you used enrichment only and you are happy on HubSpot.** Breeze Intelligence is probably fine. The one thing to verify: whether the specific enrichment fields and custom-property workflows you built on Clearbit are preserved one-for-one.
+
+**Scenario 2: you used enrichment only and you are NOT on HubSpot (or not staying).** Apollo if you are sales-led and North-America-focused. Cognism if you are EU-focused. ZoomInfo if you are enterprise. Lusha if the use case is a Chrome-extension lookup for a small team.
+
+**Scenario 3: you used Reveal as much as enrichment, and you want both.** Abmatic is built for this buyer. Warmly is the narrower alternative if personalization and ads are not a priority. 6sense is the enterprise answer with longer deployment.
+
+**Scenario 4: you want everything Clearbit did, plus the ad and attribution layers to close the loop.** This is the full-stack ABM play. Abmatic, Demandbase, or 6sense, in that order of time-to-value and budget.
+
+The clearest signal you are about to buy wrong: you are evaluating enrichment-only tools to replace both halves of Clearbit because the Reveal half is less visible. Reveal was driving more of your pipeline than you noticed, check your attribution before picking a replacement that only covers enrichment.
+
+## Migration FAQ
+
+<Schema type="FAQPage" data={{
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Is Breeze Intelligence a drop-in Clearbit replacement?",
+      acceptedAnswer: { "@type": "Answer", text: "For HubSpot customers whose Clearbit use was inside HubSpot workflows, Breeze is close to drop-in on the enrichment side and similarly close on Reveal-to-personalization inside HubSpot CMS. For non-HubSpot customers, Breeze is not available as a standalone product, so it is not a replacement at all. For customers who used the Clearbit standalone API to enrich product signups or custom CRM records, Breeze is a step down because the standalone API surface has been reduced." }
+    },
+    {
+      "@type": "Question",
+      name: "Can I export my historical Clearbit data before switching?",
+      acceptedAnswer: { "@type": "Answer", text: "Yes. HubSpot and the legacy Clearbit tenant both support CSV and API export of enrichment data you have accumulated. Most destination tools, including Abmatic, support CSV import of enriched records as a starting dataset. Plan on a single working session for export and a week of live traffic to validate the new enrichment source matches your historical records." }
+    },
+    {
+      "@type": "Question",
+      name: "What replaces the Clearbit enrichment API for product signups?",
+      acceptedAnswer: { "@type": "Answer", text: "Apollo, ZoomInfo, Cognism, and Clay all offer enrichment APIs that can be wired into a product signup flow. Apollo and Clay are the most commonly chosen for SaaS signup enrichment because of pricing and API ergonomics. Abmatic exposes enrichment data on identified accounts via its API for customers who want enrichment tied to intent signals rather than a generic firmographic lookup." }
+    },
+    {
+      "@type": "Question",
+      name: "What replaces Clearbit Reveal specifically?",
+      acceptedAnswer: { "@type": "Answer", text: "For identifying anonymous visitors and triggering personalized experiences, the direct replacements are Abmatic (full platform), Warmly (visitor ID plus outbound routing), RB2B (U.S. person-level only), and HubSpot Breeze inside HubSpot CMS for HubSpot-native teams. 6sense and Demandbase include Reveal-equivalent capabilities inside their enterprise ABM stacks." }
+    },
+    {
+      "@type": "Question",
+      name: "Will I see a cost jump when I move off Clearbit?",
+      acceptedAnswer: { "@type": "Answer", text: "It depends on which tool you pick and how much of Clearbit you used. Moving to Breeze inside HubSpot Enterprise has produced reported price increases of 30 to 60 percent in customer migration discussions. Moving to Apollo or Cognism usually produces a cost decrease for enrichment-only use. Moving to Abmatic or a full ABM platform typically changes the shape of the spend rather than the dollar amount, you consolidate three or four contracts into one, often at a similar total." }
+    },
+    {
+      "@type": "Question",
+      name: "Is my Clearbit data still usable after the Breeze migration?",
+      acceptedAnswer: { "@type": "Answer", text: "If you are a HubSpot Enterprise customer, yes, the historical enrichment data is preserved inside HubSpot records. If you are a non-HubSpot customer whose standalone Clearbit tenant was wound down, the data you exported before the shutdown is usable. Fresh lookups require a replacement tool. Do not count on re-enriching old records for free on the new vendor, plan a one-time bulk enrichment budget for the migration." }
+    },
+    {
+      "@type": "Question",
+      name: "Can I run Abmatic alongside HubSpot without replacing HubSpot?",
+      acceptedAnswer: { "@type": "Answer", text: "Yes. Abmatic integrates with HubSpot as a CRM source of truth and runs alongside it, identifying visitors, enriching records, triggering personalization, running ads, and pushing account-level data back into HubSpot. Many Abmatic customers keep HubSpot as their CRM and marketing automation platform, and use Abmatic for the enrichment, Reveal, advertising, and attribution layers that Breeze does not cover outside the HubSpot UI." }
+    }
+  ]
+}} />
+
+**Is Breeze Intelligence a drop-in Clearbit replacement?**
+For HubSpot customers whose Clearbit use was inside HubSpot workflows, Breeze is close to drop-in on enrichment and similar on Reveal-to-personalization inside HubSpot CMS. For non-HubSpot customers, Breeze is not available as a standalone product, so it is not a replacement at all. For customers who used the Clearbit standalone API to enrich product signups or custom CRM records, Breeze is a step down because the standalone API surface has been reduced.
+
+**Can I export my historical Clearbit data before switching?**
+Yes. HubSpot and the legacy Clearbit tenant both support CSV and API export. Most destination tools, including Abmatic, support CSV import of enriched records as a starting dataset.
+
+**What replaces the Clearbit enrichment API for product signups?**
+Apollo, ZoomInfo, Cognism, and Clay all offer enrichment APIs that can be wired into a product signup flow. Apollo and Clay are the most commonly chosen for SaaS signup enrichment because of pricing and API ergonomics. Abmatic exposes enrichment data on identified accounts via its API for customers who want enrichment tied to intent signals.
+
+**What replaces Clearbit Reveal specifically?**
+Abmatic (full platform), Warmly (visitor ID plus outbound routing), RB2B (U.S. person-level only), and HubSpot Breeze inside HubSpot CMS for HubSpot-native teams. 6sense and Demandbase include Reveal-equivalent capabilities inside their enterprise ABM stacks.
+
+**Will I see a cost jump when I move off Clearbit?**
+It depends on which tool you pick. Moving to Breeze inside HubSpot Enterprise has produced reported price increases of 30 to 60 percent in customer migration discussions. Moving to Apollo or Cognism usually produces a cost decrease for enrichment-only use. Moving to Abmatic typically changes the shape of the spend, consolidating several contracts into one.
+
+**Is my Clearbit data still usable after the Breeze migration?**
+If you are a HubSpot Enterprise customer, yes, the historical enrichment data is preserved inside HubSpot records. If you are a non-HubSpot customer whose standalone Clearbit tenant was wound down, the data you exported before the shutdown is usable.
+
+**Can I run Abmatic alongside HubSpot without replacing HubSpot?**
+Yes. Abmatic integrates with HubSpot as a CRM source of truth and runs alongside it, identifying visitors, enriching records, triggering personalization, running ads, and pushing account-level data back into HubSpot.
+
+## The honest close
+
+HubSpot unbundled what Clearbit bundled. For HubSpot customers, the new bundle is Breeze, and if you are staying on HubSpot, that is the fastest path. For everyone else, which is most of Clearbit's former customer base, the job is to rebundle enrichment plus Reveal inside a new vendor that is not locked to a specific CRM.
+
+Abmatic was built with exactly that scope. Enrichment, visitor reveal, personalization, advertising, and attribution in one platform, with deployments measured in hours and pricing that does not require a HubSpot Enterprise contract. Ketch moved to Abmatic and reported 4.2× pipeline velocity within a quarter, the kind of outcome that happens when your enrichment, reveal, and activation are speaking to each other instead of sitting in three separate contracts.
+
+Book a 30-minute demo. We will rebuild your current Clearbit enrichment and Reveal flows inside Abmatic live on the call, show you the accounts identified, and let you decide whether rebundling is worth the switch.
+
+<CTAInline
+  primary={{ label: "See Abmatic rebundle enrichment + reveal — 30 min demo", href: "https://abmatic.ai/demo" }}
+  secondary={{ label: "Book a Clearbit-to-Abmatic migration walkthrough", href: "https://abmatic.ai/demo?topic=clearbit-migration" }}
+/>
+
+<RelatedArticles currentSlug="alternatives-to-clearbit" />
+
+### More related reading
+
+- [Alternatives to 6sense](/alternatives-to-6sense/)
+- [Alternatives to Mutiny](/alternatives-to/mutiny/)
+- [What is intent data?](/glossary/intent-data/)
+- [What is account-based marketing?](/glossary/account-based-marketing/)
+- [What is agentic marketing?](/glossary/agentic-marketing/)
+
+<Schema type="Article" data={{
+  headline: "10 Clearbit Alternatives in 2026 — Replace Enrichment AND Reveal Personalization",
+  datePublished: "2026-04-22",
+  dateModified: "2026-04-22",
+  author: { "@type": "Organization", name: "Abmatic AI" },
+  publisher: { "@type": "Organization", name: "Abmatic AI", logo: { "@type": "ImageObject", url: "https://learn.abmatic.ai/brand/logo-horizontal.png" } },
+  mainEntityOfPage: "https://learn.abmatic.ai/alternatives-to/clearbit/",
+  description: "Clearbit did enrichment plus Reveal personalization. HubSpot Breeze only replaces half. Compare 10 alternatives that rebundle both jobs."
+}} />
+
+<Schema type="ItemList" data={{
+  itemListElement: [
+    { "@type": "ListItem", position: 1, item: { "@type": "Product", name: "Abmatic AI", url: "https://abmatic.ai/" } },
+    { "@type": "ListItem", position: 2, item: { "@type": "Product", name: "Apollo", url: "https://www.apollo.io/" } },
+    { "@type": "ListItem", position: 3, item: { "@type": "Product", name: "ZoomInfo", url: "https://www.zoominfo.com/" } },
+    { "@type": "ListItem", position: 4, item: { "@type": "Product", name: "Cognism", url: "https://www.cognism.com/" } },
+    { "@type": "ListItem", position: 5, item: { "@type": "Product", name: "Lusha", url: "https://www.lusha.com/" } },
+    { "@type": "ListItem", position: 6, item: { "@type": "Product", name: "6sense", url: "https://6sense.com/" } },
+    { "@type": "ListItem", position: 7, item: { "@type": "Product", name: "Warmly", url: "https://warmly.ai/" } },
+    { "@type": "ListItem", position: 8, item: { "@type": "Product", name: "RB2B", url: "https://rb2b.com/" } },
+    { "@type": "ListItem", position: 9, item: { "@type": "Product", name: "Koala", url: "https://getkoala.com/" } },
+    { "@type": "ListItem", position: 10, item: { "@type": "Product", name: "Clay", url: "https://www.clay.com/" } }
+  ]
+}} />

@@ -1,0 +1,257 @@
+import Schema from "@/components/Schema";
+import CTAInline from "@/components/CTAInline";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import Hero from "@/components/Hero";
+import RelatedArticles from "@/components/RelatedArticles";
+
+<Schema type="BreadcrumbList" data={{
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://learn.abmatic.ai/" },
+    { "@type": "ListItem", position: 2, name: "Glossary", item: "https://learn.abmatic.ai/glossary/" },
+    { "@type": "ListItem", position: 3, name: "Intent Data", item: "https://learn.abmatic.ai/glossary/intent-data/" }
+  ]
+}} />
+
+<Schema type="DefinedTerm" data={{
+  name: "Intent Data",
+  description: "Behavioral and contextual signals that indicate a company or buyer is actively researching a product category or problem. In B2B, intent data is used to identify in-market accounts, prioritize outreach, and personalize campaigns before the buyer fills out a form.",
+  inDefinedTermSet: "https://learn.abmatic.ai/glossary/",
+  url: "https://learn.abmatic.ai/glossary/intent-data/"
+}} />
+
+<Breadcrumbs items={[
+  { label: "Home", href: "/" },
+  { label: "Glossary", href: "/glossary/" },
+  { label: "Intent Data" }
+]} />
+
+<Hero
+  src="/images/hero/intent-data.jpg"
+  alt="Close-up of a circuit board representing signals flowing through a system"
+  credit={{ name: "Alexandre Debieve", url: "https://unsplash.com/@alexkixa" }}
+/>
+
+# What Is Intent Data? Definition, Types, and How B2B Teams Use It (2026)
+
+**Last updated: April 22, 2026**
+
+**Intent data is behavioral and contextual signals that indicate a company or buyer is actively researching a product category or problem. In B2B, intent data is used to identify in-market accounts, prioritize outreach, and personalize campaigns before the buyer fills out a form.**
+
+The idea is simple. Most of the buying journey happens before anyone raises their hand. Intent data is how you see that invisible middle, the content they are reading, the competitors they are searching for, the review sites they are checking, and act on it while they are still in research mode. Done well, it shortens the gap between "someone at this company is thinking about us" and "a qualified opportunity is in pipeline" from months to weeks.
+
+Done badly, it is a data feed you pay for and never action, because by the time the signals reach your CRM, the buying committee has already picked a shortlist without you on it.
+
+This page covers the definition, the types (first-party, second-party, third-party), the common signal categories, how teams actually use the data, the privacy considerations, and the 2026 shift: what it means when AI agents are acting on intent data in real time rather than a human queuing it up on a Monday.
+
+## Table of contents
+
+1. [Types of intent data](#types-of-intent-data)
+2. [Common intent signals](#common-intent-signals)
+3. [How B2B teams use intent data](#how-b2b-teams-use-intent-data)
+4. [Intent data sources compared](#intent-data-sources-compared)
+5. [How AI agents use intent data](#how-ai-agents-use-intent-data)
+6. [The freshness problem](#the-freshness-problem)
+7. [Privacy and legal](#privacy-and-legal)
+8. [FAQ](#faq)
+
+## Types of intent data
+
+There are three recognized types, usually described by who owns the signal source.
+
+**First-party intent data** is signals you collect yourself, on your own properties. The visitors on your website. The pages they viewed, the content they downloaded, the chats they started, the demos they repeat-visited. Product-usage signals if you are a PLG business: feature adoption, usage spikes, integration activations. First-party data is the most reliable and the most actionable because you control the collection and the latency is zero.
+
+**Second-party intent data** is first-party data someone else collected and shared with you, usually under a partnership or co-op arrangement. Content-syndication networks are a classic example: a vendor promotes your whitepaper to their audience, tells you who downloaded it, and passes the lead. Communities like G2 and TrustRadius expose a version of this: their users' review-reading behavior is their first-party data, which they sell to you as an intent signal.
+
+**Third-party intent data** is signals collected across the open web by providers like Bombora, TechTarget, or LinkedIn, then aggregated and sold. Bombora, for example, operates a co-op of publishers and tracks topic consumption across millions of business domains, then sells that as "companies researching [topic] this week." Third-party intent data is the broadest view of the market but has the longest collection-to-activation latency and the least transparent accuracy.
+
+The trade-off table:
+
+| Type | Accuracy | Coverage | Freshness | Cost | Who owns it |
+|---|---|---|---|---|---|
+| First-party | High | Narrow (your site only) | Real-time | Low | You |
+| Second-party | Medium-high | Moderate (partner scope) | Hours to days | Medium | Shared with partner |
+| Third-party | Moderate | Wide (cross-web) | Days to weeks | Medium to high | Data provider |
+
+In practice, the best intent programs use all three. First-party tells you who is on your site right now. Second-party tells you who is researching in your partner network. Third-party tells you who is researching anywhere else.
+
+## Common intent signals
+
+The signals that actually matter, roughly in order of how predictive they tend to be for B2B buying decisions.
+
+- **Competitor name searches.** An account that is searching "[your competitor] alternatives" or "[your competitor] pricing" is usually already evaluating. This is one of the highest-intent signals available.
+- **Pricing and demo page visits.** Especially repeat visits within a 14-day window.
+- **Review-site research on your category.** G2 Buyer Intent, TrustRadius, and Gartner Peer Insights expose when accounts are reading reviews in your category, even when they are not looking at your product specifically.
+- **Content consumption on research-stage topics.** Bombora, TechTarget, and similar networks track topic-level consumption across the open web.
+- **Executive LinkedIn engagement.** Specific decision-makers commenting on or reacting to category content.
+- **Hiring signals.** Job postings for roles that would use your product ("ABM manager," "demand gen director") indicate a team is forming or expanding.
+- **Product usage spikes (PLG).** A free-tier account suddenly increasing seats or feature usage is a classic PLG intent signal.
+- **Community participation.** Slack community posts, GitHub repo stars, Reddit and Discord mentions. Especially predictive in developer-tool, infrastructure, and community-led B2B motions.
+
+Signal quality is not the same as signal volume. A single high-quality signal (a VP at an ICP-fit account searching a competitor name) usually beats a hundred low-quality signals (anonymous blog reads).
+
+## How B2B teams use intent data
+
+The practical use cases, in the order teams usually adopt them.
+
+**Identify in-market accounts.** The foundational use. Intent data tells you which of your target accounts are actively researching your category right now, so your sales and marketing efforts concentrate on them rather than spray across the full ICP. This is what the earliest 6sense and Bombora deployments were built on, and it still defines the core use case.
+
+**Prioritize outreach sequences.** With scored intent data, BDR teams work accounts ranked by signal strength rather than by alphabetical Salesforce view. A 2x to 4x lift in meetings-per-BDR-hour is typical for teams making this move.
+
+**Trigger personalized web experiences.** When an identified in-market account visits your site, the landing page, the banner, the case study shown, and the CTA can all be personalized to their segment. This is what tools like [Mutiny](https://mutiny.com/) pioneered at the personalization layer; platforms like [Abmatic](https://abmatic.ai/) extend it with a [Personalization Engine](https://abmatic.ai/products/personalization-engine) that uses intent data as a trigger across landing pages, banners, and pop-ups.
+
+**Score accounts (not leads).** Traditional lead scoring rates individual contacts. Intent-data-aware account scoring rates the *company* by combining fit (firmographic, technographic) with intent (signal strength, recency). Account-level scoring is the prerequisite for any real ABM program.
+
+**Allocate ad spend toward warming accounts.** When intent signals show an account is warming, increase ad spend and frequency against it. When signals cool, pull back. This closes the paid-media loop with the intent signal, which traditional advertising platforms cannot do on their own.
+
+**Inform sales talking points.** Signal content gives sales real context. "I saw your team was researching ABM attribution this week, happy to share what our customers have found works" is a better opener than "Circling back on my last email."
+
+## Intent data sources compared
+
+A short tour of the major signal sources and what each is actually useful for.
+
+| Source | Type | Strength | Weakness |
+|---|---|---|---|
+| Bombora | Third-party | Widest topic-consumption co-op in B2B | Signals are aggregated at the company + topic level, not individual |
+| 6sense intent graph | Third-party | Deepest proprietary coverage in category | Priced for enterprise; long deployment |
+| TechTarget Priority Engine | Third-party | Verified buyer-intent across TechTarget properties | Narrower than Bombora, tech-specific |
+| G2 Buyer Intent | Second-party | Category-specific review-reading signals | Expensive relative to coverage |
+| LinkedIn audience signals | Second-party | Executive-level engagement visibility | Requires LinkedIn ad spend to access well |
+| HubSpot Breeze | First + third-party | Native to HubSpot Enterprise | Non-HubSpot teams cannot access |
+| Your own web pixel | First-party | Real-time, full-fidelity on your properties | Only sees visitors who came to you |
+| Cognism | Third-party (largely resold Bombora) | Strong EU coverage and cadence tooling | Bombora resale means signal depth is not proprietary |
+
+Most teams end up running a first-party pixel plus one third-party source (Bombora is the most common entry) plus one review-site signal (G2 is the most common). The full-stack ABM platforms ([6sense](https://6sense.com/), [Demandbase](https://www.demandbase.com/), Abmatic) ingest multiple sources and do the blending for you.
+
+## How AI agents use intent data
+
+This is the 2026 change worth understanding, because it redefines what "using intent data" looks like operationally.
+
+In the traditional intent-data workflow, a signal arrives (for example, "Acme Corp's content consumption on topic 'ABM attribution' crossed the baseline this week"), a report generates overnight, a human reviews it the next morning, a BDR adds Acme to a cadence, and outreach lands two or three days later. That cycle is five to seven days in the best case, more often a week and a half.
+
+In an agentic workflow, the signal arrives, an AI agent evaluates it against a goal ("find in-market accounts in the Series B SaaS segment and book meetings with their VP of Demand Gen"), the agent takes action across tools (adjusts ad spend, triggers a personalized page variant, queues a BDR outreach draft, sends a Slack alert to the account owner), and the human reviews the outcome rather than the signal. The cycle compresses to hours.
+
+[Abmatic's Clara](https://abmatic.ai/products/clara-ai) is one example of this pattern: a pipeline AI that watches intent signals across first-party and third-party sources, plans campaigns against the warming accounts, launches them across LinkedIn, Google, and Meta, monitors performance, and surfaces a weekly report. The goal-setting and the guardrails are human. The execution is agentic.
+
+The reason this matters for your intent-data buying decision is that most third-party intent data was built assuming a human would act on it in a next-day cycle. When the cycle becomes hours, the freshness of the signal source matters more than its depth. A shallow first-party signal acted on in 30 minutes usually beats a deep third-party signal acted on in a week. This is why the best 2026 intent programs emphasize real-time first-party pixels plus second-party behaviors in close partnerships, with third-party data providing a broader backdrop rather than the primary action signal.
+
+## The freshness problem
+
+One pattern every intent-data buyer should internalize before signing a contract. Most third-party intent data is lagged.
+
+The typical third-party pipeline looks like this. A co-op publisher collects pageview data across their network. That data is aggregated weekly, de-identified, and delivered to the intent provider. The provider baselines topic consumption across companies to detect "surges" above normal. The surge report lands in the buyer's CRM a few days later. By the time a BDR acts on the signal, the underlying research behavior is often two to three weeks old.
+
+For accounts on a fast buying cycle (mid-market SaaS, 30 to 60 day eval), that lag can mean the deal is already lost. The committee has chosen a shortlist, run demos, and is about to pick. A three-week-old signal that says "they are researching your category" is not actionable, it is historical.
+
+The fix is not to abandon third-party intent data. It is to treat third-party as a backdrop and first-party plus real-time second-party as the action layer. The accounts that matter most are the ones whose third-party signal is confirmed by a first-party visit to your site this week. Those are real. Those are actionable.
+
+## Privacy and legal
+
+A short grounding. Intent data collection is legal in both the US and EU, but the basis differs.
+
+In the US, most third-party intent data is covered under standard commercial tracking consent frameworks. California's CCPA/CPRA gives residents the right to opt out of the "sale" of their data, which most intent providers accommodate via opt-out links in publisher networks.
+
+In the EU, the lawful basis for intent data collection is usually **legitimate interest** (GDPR Article 6(1)(f)), with transparency notices in the relevant publisher privacy policies. Some intent providers require explicit consent via a CMP (consent management platform) before delivering signals on EU-originated companies.
+
+First-party intent data on your own site follows your site's privacy policy and cookie consent flow. Standard cookieless tracking approaches (server-side pixels, first-party contextual signals, authenticated sessions) remain fully compliant and are the direction the industry is moving as third-party cookies are deprecated.
+
+The cookieless future actually favors first-party intent data over third-party, which is worth weighing when you decide where to invest most in 2026 and beyond.
+
+## FAQ
+
+<Schema type="FAQPage" data={{
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What's the difference between first-party and third-party intent data?",
+      acceptedAnswer: { "@type": "Answer", text: "First-party intent data is signals you collect yourself on your own properties, visitor behavior on your website, content downloads, chat activity, product usage. Third-party intent data is signals collected across the open web by providers like Bombora or TechTarget, aggregated across publisher networks, and sold as 'companies researching this topic.' First-party is more accurate and real-time but narrower. Third-party is broader but lagged and less precise." }
+    },
+    {
+      "@type": "Question",
+      name: "Is intent data reliable?",
+      acceptedAnswer: { "@type": "Answer", text: "Intent data reliability varies widely by type and provider. First-party data is as reliable as your own tracking implementation, generally very. Third-party data quality depends on the publisher network size, the topic taxonomy precision, and the baseline methodology. As a working rule, treat any single third-party signal as a hypothesis, not a fact. Two or three corroborating signals (first-party visit plus third-party topic consumption plus a review-site read) are materially more reliable than any one alone." }
+    },
+    {
+      "@type": "Question",
+      name: "How accurate is B2B intent data?",
+      acceptedAnswer: { "@type": "Answer", text: "Company-level third-party intent data is typically accurate in the 60 to 80 percent range, that is, when the provider says 'this company is researching topic X,' there is usually a 60 to 80 percent chance somebody at that company actually is. Person-level third-party intent data is less accurate, usually under 50 percent unless derived from deterministic sources. First-party data on your own properties is effectively 100 percent accurate because you controlled the collection." }
+    },
+    {
+      "@type": "Question",
+      name: "Is intent data GDPR-compliant?",
+      acceptedAnswer: { "@type": "Answer", text: "Most commercial intent data providers operate under GDPR's legitimate interest basis with appropriate transparency notices in publisher privacy policies. Collection of first-party intent data on your own site is governed by your site's privacy policy and consent flow. For fully compliant programs, couple intent data with a consent management platform and document your lawful basis. Specific compliance obligations depend on your jurisdiction and your DPO's interpretation." }
+    },
+    {
+      "@type": "Question",
+      name: "What's the best intent data provider?",
+      acceptedAnswer: { "@type": "Answer", text: "There is no single best provider because the right one depends on what you are buying for. Bombora has the widest topic-consumption co-op. TechTarget has the deepest tech-specific research signals. G2 has the strongest category review-reading signals. 6sense has the deepest proprietary intent graph but is an enterprise platform, not a standalone data provider. Abmatic combines first-party, third-party, and partner signals inside a single platform so you do not have to pick one. The shortlist depends on your budget, your ICP, and whether you want a data feed or an activation platform." }
+    },
+    {
+      "@type": "Question",
+      name: "How much does intent data cost?",
+      acceptedAnswer: { "@type": "Answer", text: "Pricing bands vary by type. Bombora standalone feeds start around $25,000 to $40,000 per year. G2 Buyer Intent ranges from low five-figures to mid five-figures depending on category and seat count. TechTarget Priority Engine is typically high four- to mid five-figures. Full-stack intent platforms like 6sense and Demandbase sit in the high five- to six-figure band and bundle intent data with activation. Abmatic's platform pricing falls in the mid four- to low five-figures for equivalent scope, with intent data included rather than priced separately." }
+    },
+    {
+      "@type": "Question",
+      name: "How do AI agents use intent data?",
+      acceptedAnswer: { "@type": "Answer", text: "AI agents use intent data as a trigger for autonomous action within guardrails. A traditional workflow has a human review signals and decide what to do next. An agentic workflow has the system watch signals, evaluate them against a goal, and take action across tools, adjusting ad bids, triggering personalized web experiences, queuing BDR outreach drafts, sending Slack alerts to account owners, then surfacing outcomes to humans for review rather than every individual action. The key change is cycle time: hours instead of days. Abmatic's Clara is an example of this pattern in production." }
+    },
+    {
+      "@type": "Question",
+      name: "How does Abmatic use intent data?",
+      acceptedAnswer: { "@type": "Answer", text: "Abmatic combines first-party intent signals (visitor identification, content consumption on your site, chat behavior, product usage) with partnered third-party signals, blends them into a unified account-level score, and uses that score to trigger actions across our six modules: personalized web experiences, account-based advertising on LinkedIn and Meta, BDR outreach queuing, and pipeline attribution. Clara, our pipeline AI, runs the triage and activation agentically within guardrails set by the demand gen team. The goal is to compress signal-to-action from days to hours." }
+    }
+  ]
+}} />
+
+**What's the difference between first-party and third-party intent data?**
+First-party intent data is signals you collect yourself on your own properties. Third-party intent data is signals collected across the open web by providers like Bombora or TechTarget, aggregated across publisher networks, and sold as "companies researching this topic." First-party is more accurate and real-time but narrower. Third-party is broader but lagged and less precise.
+
+**Is intent data reliable?**
+Reliability varies widely. First-party is generally very reliable. Third-party depends on the publisher network size, the topic taxonomy precision, and the baseline methodology. Treat any single third-party signal as a hypothesis, not a fact. Corroborating signals are materially more reliable than any one alone.
+
+**How accurate is B2B intent data?**
+Company-level third-party intent data is typically accurate in the 60 to 80 percent range. Person-level third-party intent data is usually under 50 percent unless derived from deterministic sources. First-party data on your own properties is effectively 100 percent accurate because you controlled the collection.
+
+**Is intent data GDPR-compliant?**
+Most commercial intent data providers operate under GDPR's legitimate interest basis with appropriate transparency notices. Collection of first-party intent data on your own site is governed by your site's privacy policy and consent flow. For fully compliant programs, couple intent data with a consent management platform and document your lawful basis.
+
+**What's the best intent data provider?**
+There is no single best. Bombora has the widest topic co-op. TechTarget has the deepest tech-specific signals. G2 has the strongest category review-reading signals. 6sense has the deepest proprietary intent graph. Abmatic combines first-party, third-party, and partner signals inside a single platform so you do not have to pick one.
+
+**How much does intent data cost?**
+Bombora standalone feeds start around $25,000 to $40,000 per year. G2 Buyer Intent ranges from low to mid five-figures. TechTarget Priority Engine is typically high four- to mid five-figures. Full-stack platforms like 6sense and Demandbase sit in the high five- to six-figure band. Abmatic's platform pricing falls in the mid four- to low five-figures with intent data included.
+
+**How do AI agents use intent data?**
+Agents use intent data as a trigger for autonomous action within guardrails. The system watches signals, evaluates them against a goal, and takes action across tools rather than waiting for a human review cycle. Cycle time compresses from days to hours.
+
+**How does Abmatic use intent data?**
+Abmatic blends first-party and third-party signals into a unified account score, then uses that score to trigger actions across our six modules: personalized web experiences, LinkedIn and Meta advertising, BDR outreach queuing, and pipeline attribution. Clara, our pipeline AI, runs the triage and activation agentically within guardrails set by the demand gen team.
+
+## See intent data activated in hours, not weeks
+
+Most intent-data programs stall because the cycle between signal and action is too slow. Abmatic compresses that cycle to hours by running identification, scoring, personalization, advertising, and attribution inside a single agentic platform. Our reference customer [Ketch](https://ketch.com/) reported 4.2× pipeline velocity within a quarter of going live.
+
+<CTAInline
+  primary={{ label: "See Abmatic turn intent into pipeline — 30 min demo", href: "https://abmatic.ai/demo" }}
+  secondary={{ label: "Read the ABM playbook for 2026", href: "/glossary/account-based-marketing/" }}
+/>
+
+<RelatedArticles currentSlug="intent-data" />
+
+### More related reading
+
+- [What is account-based marketing?](/glossary/account-based-marketing/)
+- [What is agentic marketing?](/glossary/agentic-marketing/)
+- [Best 6sense Alternatives for 2026](/alternatives-to-6sense/)
+- [Mutiny Alternatives for 2026](/alternatives-to/mutiny/)
+- [Clearbit Alternatives for 2026](/alternatives-to/clearbit/)
+
+<Schema type="Article" data={{
+  headline: "What Is Intent Data? Definition, Types, and How B2B Teams Use It (2026)",
+  datePublished: "2026-04-22",
+  dateModified: "2026-04-22",
+  author: { "@type": "Organization", name: "Abmatic AI" },
+  publisher: { "@type": "Organization", name: "Abmatic AI", logo: { "@type": "ImageObject", url: "https://learn.abmatic.ai/brand/logo-horizontal.png" } },
+  mainEntityOfPage: "https://learn.abmatic.ai/glossary/intent-data/",
+  description: "Intent data is behavioral signals showing a B2B buyer is in-market. Definition, types, how AI agents use it, and where it gets stale."
+}} />

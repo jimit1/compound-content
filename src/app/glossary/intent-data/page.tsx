@@ -1,108 +1,37 @@
 import type { Metadata } from "next";
-import Breadcrumbs from "@/components/Breadcrumbs";
-import Hero from "@/components/Hero";
-import RelatedArticles from "@/components/RelatedArticles";
+import Content from "./content.mdx";
 
 export const metadata: Metadata = {
-  title: "What Is Intent Data?",
+  title: "What Is Intent Data? Definition, Types, and How B2B Teams Use It (2026)",
   description:
-    "Intent data explained: definition, first vs third-party, signals, and how B2B teams use it to identify in-market accounts. Full glossary page shipping this week.",
+    "Intent data is behavioral signals that show a B2B buyer is in-market. Learn first-party vs third-party intent, how AI agents use it, and where it gets stale.",
   alternates: { canonical: "https://learn.abmatic.ai/glossary/intent-data/" },
+  keywords: [
+    "what is intent data",
+    "intent data definition",
+    "intent data meaning",
+    "intent data explained",
+    "first party intent data",
+    "third party intent data",
+    "b2b intent data",
+  ],
   openGraph: {
     title: "What Is Intent Data? | Abmatic AI",
     description:
-      "The definitive glossary entry for B2B intent data: first vs third-party, common signals, and how to activate it.",
+      "First vs third-party intent, common sources, how AI agents use it, and where third-party data gets stale.",
     url: "https://learn.abmatic.ai/glossary/intent-data/",
     type: "article",
+    publishedTime: "2026-04-22",
+    modifiedTime: "2026-04-22",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "What Is Intent Data?",
+    description:
+      "First vs third-party intent, common sources, and how AI agents use it in 2026.",
   },
 };
 
-const JSONLD = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "DefinedTerm",
-      name: "Intent Data",
-      inDefinedTermSet: "https://learn.abmatic.ai/glossary/",
-      description:
-        "Behavioral and contextual signals that suggest a company or buyer is actively researching a product category or problem, used in B2B to identify in-market accounts, prioritize outreach, and personalize campaigns.",
-    },
-    {
-      "@type": "Article",
-      headline: "What Is Intent Data?",
-      datePublished: "2026-04-22",
-      dateModified: "2026-04-22",
-      author: { "@type": "Organization", name: "Abmatic AI", url: "https://abmatic.ai/" },
-      publisher: {
-        "@type": "Organization",
-        name: "Abmatic AI",
-        logo: { "@type": "ImageObject", url: "https://learn.abmatic.ai/brand/logo-horizontal.png" },
-      },
-      mainEntityOfPage: "https://learn.abmatic.ai/glossary/intent-data/",
-    },
-    {
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: "https://learn.abmatic.ai/" },
-        { "@type": "ListItem", position: 2, name: "Glossary", item: "https://learn.abmatic.ai/glossary/" },
-        { "@type": "ListItem", position: 3, name: "Intent Data", item: "https://learn.abmatic.ai/glossary/intent-data/" },
-      ],
-    },
-  ],
-};
-
-export default function IntentDataStub() {
-  return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSONLD) }} />
-      <Breadcrumbs
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Glossary", href: "/glossary/" },
-          { label: "Intent Data" },
-        ]}
-      />
-      <Hero
-        src="/images/hero/intent-data.jpg"
-        alt="Close-up of a circuit board representing signals flowing through a system"
-        credit={{ name: "Alexandre Debieve", url: "https://unsplash.com/@alexkixa" }}
-      />
-      <h1>What Is Intent Data?</h1>
-      <p>
-        <strong>
-          Intent data is behavioral and contextual signals that suggest a company or
-          buyer is actively researching a product category or problem.
-        </strong>{" "}
-        In B2B, it is used to identify in-market accounts, prioritize outreach, and
-        personalize campaigns, before the buyer fills out a form.
-      </p>
-      <p>
-        The full glossary entry, including first-party vs third-party intent, signal
-        taxonomies, vendor comparison, privacy considerations, and FAQ is publishing
-        this week.
-      </p>
-      <p>
-        In the meantime, see how Abmatic AI turns real-time intent signals into
-        running campaigns:
-      </p>
-      <p>
-        <a
-          className="cta-primary"
-          href="https://abmatic.ai/demo"
-          rel="noopener"
-          style={{
-            display: "inline-block",
-            background: "var(--fg)",
-            color: "#fff",
-            padding: "10px 18px",
-            borderRadius: "999px",
-            textDecoration: "none",
-          }}
-        >
-          Book a 30-minute demo
-        </a>
-      </p>
-      <RelatedArticles currentSlug="intent-data" />
-    </>
-  );
+export default function Page() {
+  return <Content />;
 }
