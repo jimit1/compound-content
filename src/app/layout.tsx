@@ -34,7 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <header className="site-header">
           <nav>
-            <a href="/learn" className="brand">
+            <a href="/" className="brand">
               Abmatic <span>Learn</span>
             </a>
             <div className="nav-right">

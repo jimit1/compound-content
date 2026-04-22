@@ -16,14 +16,12 @@ const withMDX = createMDX({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: "export",
+  trailingSlash: true,
+  images: { unoptimized: true },
   pageExtensions: ["mdx", "md", "tsx", "ts"],
   reactStrictMode: true,
   poweredByHeader: false,
-  async redirects() {
-    return [
-      { source: "/", destination: "/learn", permanent: false },
-    ];
-  },
 };
 
 export default withMDX(nextConfig);
